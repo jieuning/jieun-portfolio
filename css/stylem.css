@@ -1,0 +1,88 @@
+@charset 'uft-8';
+
+@media(max-width: 1320px) {
+
+    /* 전체 폰트 사이즈 조정 */
+    html {
+        font-size: 14px;
+    }
+
+    /* ----- 메인 영역 ----- */
+
+    /* 메인 이미지 크기 조정 */
+    .main-container .bg-wrap,
+    .main-container .bg-wrap img {
+        width: 38.57143rem;
+        height: 25.71429rem;
+    }
+
+    /* 메인이미지 애니메이션 크기 조정 */
+    @-webkit-keyframes maskCircle {
+        0% {
+            width: 38.57143rem;
+            height: 25.71429rem;
+            clip-path: inset(0 0 0 0 round 0%);
+        }
+
+        100% {
+            width: 25.71429rem;
+            height: 25.71429rem;
+            clip-path: inset(0 0 0 0 round 50%);
+        }
+    }
+
+    @-moz-keyframes maskCircle {
+        0% {
+            width: 38.57143rem;
+            height: 25.71429rem;
+            clip-path: inset(0 0 0 0 round 0%);
+        }
+
+        100% {
+            width: 25.71429rem;
+            height: 25.71429rem;
+            clip-path: inset(0 0 0 0 round 50%);
+        }
+    }
+
+    @keyframes maskCircle {
+        0% {
+            width: 38.57143rem;
+            height: 25.71429rem;
+            clip-path: inset(0 0 0 0 round 0%);
+        }
+
+        100% {
+            width: 25.71429rem;
+            height: 25.71429rem;
+            clip-path: inset(0 0 0 0 round 50%);
+        }
+    }
+
+    /* ----- 어바웃 영역 ----- */
+
+    /* 어바웃 미 텍스트 박스 넓이 조정 */
+    #about .about-me .about-content-wrap,
+    #about .about-me .about-skill {
+        width: 420px;
+    }
+
+    /* ----- 프로젝트 영역 ----- */
+
+    /* 프로젝트 설명 넓이 조정 */
+    #project .contents-wrap #pro-contents .description {
+        width: 380px;
+    }
+
+    /* 프로젝트 타이틀 폰트 사이즈 조정 */
+    #project .contents-wrap #pro-contents .pro-title {
+        font-size: 3.42857rem;
+    }
+
+    /* ----- 콘텍트 영역 ----- */
+
+    /* 콘텍트 타이틀 폰트 사이즈 조정 */
+    #contact .contact-wrap .section-title.active {
+        font-size: 8.57143rem;
+    }
+}

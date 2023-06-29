@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>jieun portfolio</title>
+
+  <!-- favicon -->
+  <link rel="icon" href="image/favicon.png">
+  <!-- css -->
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/font.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/stylem.css">
+  <!-- font -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap"
+    rel="stylesheet">
+  <!-- jquery -->
+  <script src="https://code.jquery.com/jquery-3.7.0.min.js"
+    integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous">
+    </script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery.easing@1.4.1/jquery.easing.min.js"></script>
+  <!-- emailjs -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script type="text/javascript">
+    (function () {
+      // 공개키
+      emailjs.init("safhfbobRTqExyi99");
+    })();
+  </script>
+  <!-- script -->
+  <script src="js/scrollAni.js"></script>
+  <script src="js/category.js"></script>
+  <script src="js/skillTab.js"></script>
+  <script src="js/menuScroll.js"></script>
+  <script src="js/email.js"></script>
+</head>
+
+<body>
+  <!-- 탑 네비게이션 -->
+  <nav>
+    <!-- 로고 -->
+    <h2 class="hidden">로고</h2>
+    <img class="logo" src="image/logo.png" alt="JE로고">
+
+    <!-- 콘텍트 영역 배경 컬러 보색 -->
+    <img class="con-logo" src="image/logo_w.png" alt="JE로고">
+
+    <!-- 카테고리 -->
+    <div class="cate-btn">
+      <h2 class="hidden">카테고리 버튼</h2>
+      <span class="ii"></span>
+      <span></span>
+    </div>
+
+
+    <div class="category">
+      <!-- 메뉴 -->
+      <h2 class="hidden">카테고리 메뉴</h2>
+      <ul id="menu">
+        <li>main</li>
+        <li>about</li>
+        <li>project</li>
+        <li>contact us</li>
+      </ul>
+    </div>
+  </nav>
+
+
+  <section id="main">
+    <h2 class="hidden">메인 페이지</h2>
+
+    <!-- 메인 컨테이너 -->
+    <div class="main-container">
+      <!-- 메인 동영상 -->
+      <video autoplay loop muted>
+        <source src="image/run_video.mp4" type="video/mp4">
+      </video>
+      <div class="main-title">
+        <p>완주하는 마라토너처럼</p>
+        <p>목표를 향해 끊임없이 달리는</p>
+        <p><span class="highlight">웹퍼블리셔 jieun</span> 입니다</p>
+      </div>
+    </div>
+  </section>
+
+
+  <section id="about">
+    <h2 class="hidden">어바웃 페이지</h2>
+    <article class="about-me">
+      <div class="about-img-area">
+        <img src="image/profile_img.png" alt="프로필 이미지">
+        <div class="resume_btn">이력서 보러가기</div>
+      </div>
+      <div class="about-content-area">
+        <h4>안녕하세요!<br> 목표를 향해 달리는<br> 신입 웹퍼블리셔 황지은 입니다:&#41;</h4>
+        <p>
+          저는 프론트엔드도 할 줄 아는 웹퍼블리셔를 최종 목표로 공부하고 있습니다.
+          저에겐 더 나은 웹을 만들기 위해 가장 중요하게 생각하고 실천하는 1순위와 2순위가 있습니다.
+        </p>
+        <p>
+          1순위는 웹 표준, 웹 접근성을 고려한 마크업을 통해 남녀노소 모든 사용자가 불편함 없이 웹을 이용할 수
+          있도록 하는 것 입니다. 웹퍼블리셔로서 기본적으로 지켜야할 규칙이라 생각하고 노력하는 부분입니다.
+        </p>
+        <p>
+          2순위는 트렌드에 맞는 다양한 기능, 동적인 요소들을 익히고 적재적소에 맞게 활용할 수 있도록 공부하여
+          기능은 물론 눈도 함께 즐거울 수 있는 웹을 만드는 것입니다.
+        </p>
+        <p>
+          두가지 순위를 어우르는 궁극적인 목적은 사용자에게 만족감을 줄 수 있는 웹을 만드는 것입니다.
+          그리고 더 나아가 사용자 뿐만 아니라 함께 일하는 동료에게도 좋은 영향력을 줄 수 있는 웹퍼블리셔로서
+          성장하고 싶습니다.
+        </p>
+      </div>
+    </article>
+  </section>
+
+  <section id="skills">
+    <ul class="skill-title-box">
+      <li class="skill-title-wrap">
+        <span>skill</span>
+        <img src="image/shose_icon.png" alt="운동화 아이콘">
+      </li>
+    </ul>
+    <div class="skill-wrap">
+      <h4>저는 이러한 일을 할 수 있습니다!</h4>
+      <ul class="skill-contents">
+        <li>
+          <div class="skill-text-wrap">
+            <h5>html & css</h5>
+            <p>웹 표준, 웹 접근성을 준수하여 웹 페이지 제작 </p>
+            <p>시멘틱 마크업을 통한 의미있는 구조 설계</p>
+            <p>미디어 쿼리를 이용한 반응형 웹사이트 구축</p>
+          </div>
+          <img src="image/skill_icon1.png" alt="">
+        </li>
+        <li>
+          <div class="skill-text-wrap">
+            <h5>Javascript</h5>
+            <p>ES6문법 활용</p>
+            <p>Jquery 라이브러리를 이용한 애니메이션 기능 구현</p>
+            <p>장바구니, 로그인, 회원가입, 탭등 웹에서 자주 사용되는 다양한 기능 구현</p>
+          </div>
+          <img src="image/skill_icon2.png" alt="">
+        </li>
+        <li>
+          <div class="skill-text-wrap">
+            <h5>React</h5>
+            <p>JSX문법을 사용하여 HTML과 자바스크립트 동시 작성</p>
+            <p>Component, Props, Router 등 React에 대한 이해</p>
+            <p>React Hook을 활용한 기능 구현</p>
+            <p>Styled-component를 이용한 CSS 작성</p>
+          </div>
+          <img src="image/skill_icon3.png" alt="">
+        </li>
+        <li>
+          <div class="skill-text-wrap">
+            <h5>Others</h5>
+            <p>UIUX에 대한 이해</p>
+            <p>Potoshop, Illustrator, Figma 툴 이용하여 웹 사이트 시안 제작</p>
+            <p>Github 관리</p>
+          </div>
+          <img src="image/skill_icon4.png" alt="">
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="project">
+    <ul class="project-title-box">
+      <li class="project-title-wrap">
+        <span>project</span>
+        <img src="image/shose_icon.png" alt="운동화 아이콘">
+      </li>
+    </ul>
+    <div class="project-wrap">
+      <h4>Publishing</h4>
+      <ul class="Publishing project-list-wrap">
+        <li>
+          <a href="#">
+            <div class="Pub-project-img">
+              <img src="image/project1.png" alt="이솝 프로젝트 이미지">
+            </div>
+            <div class="pub-project-hover">
+              <h5>이솝</h5>
+              <p>#반응형</p>
+              <p>기여도: 100%</p>
+              <p>제작기간: 2023.04 ~ 2023.04 </p>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <div class="Pub-project-img">
+              <img src="image/project2.png" alt="러쉬 바스밤 프로젝트 이미지">
+            </div>
+            <div class="pub-project-hover">
+              <h5>러쉬 바스밤</h5>
+              <p>#PC</p>
+              <p>기여도: 100%</p>
+              <p>제작기간: 2023.05 ~ 2023.05 </p>
+            </div>
+          </a>
+        </li>
+      </ul>
+      <h4>react</h4>
+      <ul class="project-list-wrap">
+        <li>
+          <a href="#">
+            <div class="Pub-project-img">
+              <img src="image/project3.png" alt="러쉬 바스밤 프로젝트 이미지">
+            </div>
+            <div class="pub-project-hover">
+              <h5>루트 프레시</h5>
+              <p>#반응형</p>
+              <p>기여도: 100%</p>
+              <p>제작기간: 2023.01 ~ 2023.03</p>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <div class="Pub-project-img">
+              <img src="image/project4.png" alt="러쉬 바스밤 프로젝트 이미지">
+            </div>
+            <div class="pub-project-hover">
+              <h5>가위바위보 게임</h5>
+              <p>#PC</p>
+              <p>기여도: 100%</p>
+              <p>제작기간: 2023.1 ~ 2023.1 </p>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+
+  <section id="contact">
+    <h2 class="hidden">콘텍트 페이지</h2>
+
+    <div class="contact-wrap">
+      <!-- 콘텍트 타이틀 -->
+      <h4 class="section-title">contact us</h4>
+
+      <!-- emailjs -->
+      <div class="mail">
+        <h2 class="hidden">메일 보내기기</h2>
+        <div class="input-box">
+          <h2 class="hidden">이름 입력칸</h2>
+          <input type="text" id="name" placeholder="이름" required>
+          <h2 class="hidden">이메일 입력칸</h2>
+          <input type="email" id="email" placeholder="이메일" required>
+        </div>
+        <h2 class="hidden">제목 입력칸</h2>
+        <input type="text" id="subject" placeholder="제목" required><br>
+        <h2 class="hidden">내용 입력 텍스트 박스</h2>
+        <textarea id="message" placeholder="보내실 내용을 입력해주세요."></textarea required><br>
+        <h2 class="hidden">보내기 버튼</h2>
+        <button onclick="sendEmail()">send</button>
+      </div>
+    </div>
+  </section>
+</body>
+
+</html>

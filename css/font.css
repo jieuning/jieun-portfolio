@@ -1,0 +1,16 @@
+@charset "utf-8";
+
+/* 영문 폰트 */
+@font-face {
+    font-family: "NHaas-R";
+    src: url(./font/NHaasGroteskTXPro-55Rg.ttf) format('truetype');
+}
+@font-face {
+    font-family: "NHaas-M";
+    src: url(./font/NHaasGroteskTXPro-65Md.ttf) format('truetype');
+}
+@font-face {
+    font-family: "NHaas-B";
+    src: url(./font/NHaasGroteskTXPro-75Bd.ttf) format('truetype');
+}
+
