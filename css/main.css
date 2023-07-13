@@ -1,0 +1,813 @@
+@charset "utf-8";
+
+/* 공용 클래스 */
+
+* {
+  box-sizing: border-box;
+}
+
+body,
+html {
+  height: 100%;
+  width: 100%;
+  font-family: 'Noto Sans KR', sans-serif;
+  cursor: default;
+  color: #111111;
+  font-size: 62.5%;
+}
+
+/* 스크롤바 커스텀 */
+body::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* 스크롤바 막대 커스텀 */
+body::-webkit-scrollbar-thumb {
+  background: #111111;
+  border-radius: 30px;
+  border: 2px solid #fff;
+}
+
+section {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.width-set {
+  max-width: 1060px;
+}
+
+.hidden {
+  width: 1px;
+  height: 1px;
+  font-size: 0px;
+  line-height: 0px;
+  position: absolute;
+  z-index: 99999;
+}
+
+.title {
+  font-size: 3.6rem;
+  font-weight: 600;
+  line-height: 1.2;
+  margin-bottom: 30px;
+}
+
+.sub-txt {
+  font-size: 1.8rem;
+}
+
+/* 요소 숨기기(애니메이션 효과) */
+.hidden-wrap {
+  position: relative;
+  overflow: hidden;
+}
+
+/* 타이틀 스크롤 텍스트 애니메이션 공통 */
+
+.skill-title-container,
+.pro-title-container {
+  border-top: 2px solid #111111;
+  border-bottom: 2px solid #111111;
+  padding: 30px 0;
+  overflow: hidden;
+}
+
+#skills .skill-title-container .skill-title-box,
+#project .pro-title-container .project-title-box {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+}
+
+#skills .skill-title-box .skill-title-wrap,
+#project .project-title-box .project-title-wrap {
+  display: flex;
+  flex-direction: row;
+}
+
+#skills .skill-title-box .skill-title-wrap span,
+#project .project-title-box .project-title-wrap span {
+  font-size: 48px;
+  text-transform: uppercase;
+  font-family: "NHaas-B";
+  padding: 0 20px;
+}
+
+#all-wrap {
+  min-height: calc(100% - 120px);
+  padding-bottom: 120px;
+}
+
+/* ----- 네비게이션(로고, 카테고리) ----- */
+
+nav {
+  position: absolute;
+  width: 100%;
+  padding: 30px 2.6%;
+  box-sizing: border-box;
+  z-index: 1;
+}
+
+/* 로고 */
+nav .logo {
+  position: fixed;
+  width: 48px;
+  float: left;
+}
+
+/* 콘텍트 센션 로고 색상 변경 */
+nav .con-logo {
+  position: fixed;
+  width: 38px;
+  float: left;
+  display: none;
+}
+
+/* 카테고리 버튼 */
+nav .cate-btn {
+  position: fixed;
+  right: 0;
+  cursor: pointer;
+  z-index: 10;
+  padding: 0 2.6%;
+}
+
+/* 카테고리 버튼 라인 생성 */
+nav .cate-btn span {
+  position: relative;
+  display: block;
+  width: 42px;
+  height: 4px;
+  background: #6EFA00;
+  border-radius: 50px;
+  transition: all .5s;
+}
+
+/* 스크롤 값이 콘텍트 섹션에 진입하면 색상 변경 */
+nav .cate-btn span.bg {
+  background: #fff;
+}
+
+nav .cate-btn span:nth-child(1) {
+  margin-bottom: 8px;
+}
+
+/* 카테고리 라인 close버튼 토글 */
+nav .cate-btn span:nth-child(1).toggle {
+  transform: rotate(135deg);
+  background-color: #fff;
+  top: 3px;
+  margin: 0;
+}
+
+nav .cate-btn span:nth-child(2).toggle {
+  transform: rotate(-135deg);
+  background-color: #fff;
+}
+
+/* 카테고리 */
+nav .category {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 100vh;
+  background: #111;
+  padding: 0 10%;
+  box-sizing: border-box;
+  clip-path: inset(0 0 0 100%);
+  transition: all 1s ease-in-out;
+}
+
+/* 카테고리 오픈 토글 */
+nav .category.open {
+  clip-path: inset(0 0 0 0);
+}
+
+/* 메뉴 */
+nav #menu {
+  color: #fff;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-transform: uppercase;
+  font-family: "NHaas-B";
+  gap: 50px;
+  font-size: 6.8rem;
+}
+
+/* 메뉴 버튼 */
+nav #menu li {
+  position: relative;
+  left: 100px;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* 메뉴 버튼 호버 */
+nav #menu li:hover {
+  color: #87FF29;
+  transform: translateX(-50px);
+}
+
+/* ----- 메인 ----- */
+
+.main-container {
+  position: relative;
+  max-width: 1920px;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+/* 메인 동영상 */
+.main-container video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+}
+
+/* 메인 타이틀 랩(스티키로 텍스트 고정) */
+.main-container .main-title-wrap {
+  width: 100%;
+  margin: 0 auto;
+  position: sticky;
+  top: 0;
+  padding: 0 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  color: #fff;
+  font-size: 8.2rem;
+  line-height: 1.4;
+  font-weight: 600;
+  letter-spacing: -0.04em;
+  word-break: keep-all;
+}
+
+/* 메인 타이틀(마지막 제외), 텍스트 숨기기 */
+.main-container .main-title-wrap p {
+  text-align: center;
+}
+
+.main-container .main-title-wrap p:not(:last-child) {
+  position: relative;
+  overflow: hidden;
+}
+
+.main-container .main-title-wrap p .main-title {
+  position: relative;
+
+  top: 120px;
+  opacity: 0;
+}
+
+/* 메인 타이틀 마지막 */
+.main-container .main-title-wrap .name {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  font-size: 9.6rem;
+  margin-bottom: 100px;
+  color: #6EFA00;
+  font-family: "NHaas-R";
+}
+
+/* 스크롤 다운시 메인 마지막 텍스트가 중앙으로 이동 */
+.main-container .main-title-wrap .name.active {
+  -webkit-animation: align .8s forwards ease-out;
+  animation: align .8s forwards ease-out;
+}
+
+@-webkit-keyframes align {
+  0% {
+    right: 0;
+    transform: translateX(0);
+    font-size: 9.6rem;
+    margin-bottom: 0;
+  }
+
+  100% {
+    right: 50%;
+    transform: translateX(50%);
+    font-size: 11.6rem;
+    margin-bottom: 100px;
+  }
+}
+
+@keyframes align {
+  0% {
+    right: 0;
+    transform: translateX(0);
+    font-size: 9.6rem;
+    margin-bottom: 0;
+  }
+
+  100% {
+    right: 50%;
+    transform: translateX(50%);
+    font-size: 11.6rem;
+    margin-bottom: 100px;
+  }
+}
+
+/* 스크롤 업시 메인 마지막 텍스트 원래 위치로 이동 */
+.main-container .main-title-wrap .name.back {
+  -webkit-animation: alignBack .8s forwards ease-out;
+  animation: alignBack .8s forwards ease-out;
+}
+
+@-webkit-keyframes alignBack {
+  0% {
+    right: 50%;
+    transform: translateX(50%);
+    font-size: 11.6rem;
+    margin-bottom: 100px;
+  }
+
+  100% {
+    right: 0;
+    transform: translateX(0);
+    font-size: 9.6rem;
+    margin-bottom: 0;
+  }
+}
+
+@keyframes alignBack {
+  0% {
+    right: 50%;
+    transform: translateX(50%);
+    font-size: 11.6rem;
+    margin-bottom: 100px;
+  }
+
+  100% {
+    right: 0;
+    transform: translateX(0);
+    font-size: 9.6rem;
+    margin-bottom: 0;
+  }
+}
+
+.main-container .main-title-wrap .name .highlight {
+  position: relative;
+  top: 50px;
+  opacity: 0;
+}
+
+/* 스크롤 화살표 */
+.scroll-arrow {
+  position: absolute;
+  bottom: 3%;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #fff;
+  font-size: 16px;
+  text-align: center;
+}
+
+/* 스크롤 화살표 이미지(위 아래로 반복되는 애니메이션) */
+.scroll-arrow img {
+  width: 24px;
+  margin: 10px;
+  -webkit-animation: move 2s infinite ease-in-out;
+  animation: move 2s infinite ease-in-out;
+}
+
+@-webkit-keyframes move {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(10px);
+
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes move {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(10px);
+
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* ------  어바웃 ------ */
+
+#about {
+  width: 100%;
+  height: auto;
+  margin: 200px 0;
+}
+
+#about .about-wrap {
+  height: 100%;
+  margin: 0 auto;
+}
+
+#about .about-wrap .about-me {
+  position: relative;
+  top: 100px;
+  display: flex;
+  justify-content: space-between;
+  opacity: 0;
+}
+
+/* 어바웃 미 스크롤시 나타나는 애니메이션 */
+#about .about-wrap .about-me.active {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* 프로필 이미지 영역 */
+#about .about-img-area {
+  position: sticky;
+  top: 200px;
+  width: 100%;
+  height: 100%;
+}
+
+/* 프로필 이미지 */
+#about .about-img-area img {
+  width: 90%;
+  padding-right: 30px;
+}
+
+#about .about-content-area {
+  width: 100%;
+  height: 100%;
+  word-break: keep-all;
+}
+
+/* 소개 내용 */
+#about .about-content-area p:not(:nth-child(2)) {
+  margin-top: 20px;
+}
+
+#about .about-content-area p {
+  font-size: 1.8rem;
+  font-weight: 300;
+  line-height: 1.4;
+  word-wrap: break-all;
+}
+
+/* 장점 */
+#about .advantages {
+  margin-top: 200px;
+}
+
+#about .advantages h4 {
+  position: relative;
+  top: 100px;
+  opacity: 0;
+  margin-bottom: 60px;
+}
+
+#about .advantages ul {
+  display: flex;
+}
+
+#about .advantages ul li {
+  position: relative;
+  top: 100px;
+  width: calc(100% / 3);
+  text-align: center;
+  line-height: 1.5;
+  opacity: 0;
+}
+
+#about .advantages ul li h5 {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-top: 20px;
+}
+
+#about .advantages ul li p {
+  font-weight: 300;
+  font-size: 1.6rem;
+}
+
+#about .advantages ul li img {
+  width: 112px;
+}
+
+/* ----- 스킬 영역 ----- */
+
+#skills {
+  width: 100%;
+  height: auto;
+}
+
+#skills .skill-wrap {
+  margin: 200px auto;
+}
+
+/* 타이틀 */
+#skills .skill-wrap h4 {
+  position: relative;
+  top: 100px;
+  opacity: 0;
+}
+
+/* 스킬 내용 */
+#skills .skill-wrap .skill-contents li {
+  position: relative;
+  top: 100px;
+  opacity: 0;
+  border-bottom: 4px solid #111111;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* 스킬 이미지 */
+#skills .skill-wrap .skill-contents li img {
+  position: relative;
+  right: 0;
+  width: 126px;
+  object-fit: contain;
+  padding-right: 20px;
+}
+
+#skills .skill-wrap .skill-contents li .skill-text-wrap {
+  padding: 50px 0 50px 20px;
+}
+
+/* 해당 스킬 타이틀 */
+#skills .skill-wrap .skill-contents li h5 {
+  font-size: 3rem;
+  font-family: "NHaas-B";
+  padding-bottom: 10px;
+}
+
+/* 스킬 내용 */
+#skills .skill-wrap .skill-contents li p {
+  font-weight: 300;
+  line-height: 1.5;
+}
+
+/* ------  프로젝트 섹션 ------ */
+
+#project {
+  width: 100%;
+  height: auto;
+}
+
+#project .project-wrap {
+  margin: 200px auto;
+  position: relative;
+  top: 100px;
+  opacity: 0;
+}
+
+/* 프로젝트 구분 타이틀 */
+#project .project-wrap h4 {
+  text-transform: uppercase;
+}
+
+#project .project-wrap .Publishing {
+  margin-bottom: 80px;
+}
+
+#project .project-wrap .project-list-wrap {
+  display: flex;
+  gap: 6rem;
+}
+
+#project .project-wrap .project-list-wrap a {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* 프로젝트 이미지 */
+#project .project-wrap .project-list-wrap .Pub-project-img img {
+  width: 100%;
+  display: block;
+  filter: drop-shadow(0px 4px 10px rgba(0, 0, 0, 0.1));
+}
+
+/* 프로젝트 호버시 나타나는 프로젝트 정보 */
+#project .project-wrap .pub-project-hover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(17, 17, 17, 0.80);
+  color: #fff;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  line-height: 1.8;
+  opacity: 0;
+  transition: all .4s;
+}
+
+#project .project-wrap .pub-project-hover:hover {
+  opacity: 1;
+}
+
+#project .project-wrap .pub-project-hover h5 {
+  font-size: 2.4rem;
+  font-weight: 500;
+}
+
+#project .project-wrap .pub-project-hover p {
+  font-weight: 300;
+}
+
+#project .project-wrap .project-list-wrap .Pub-project:nth-child(1) {
+  margin-bottom: 50px;
+}
+
+/* ------  콘텍트 섹션 ------ */
+
+#contact {
+  width: 100%;
+  height: 100vh;
+  transition: all .6s;
+}
+
+#contact .contact-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+#contact .contact-container .contact-title {
+  transition: all 1s ease-in-out;
+  padding-left: 7.291%;
+  z-index: 0;
+  position: absolute;
+  top: 50px;
+  left: 0;
+  font-size: 10.2rem;
+  font-family: "NHaas-M";
+  color: #E9E9E9;
+  letter-spacing: -0.04em;
+}
+
+#contact .contact-container .contact-title.active {
+  color: #87FF29;
+  font-size: 12.6rem;
+}
+
+#contact .contact-wrap {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 200px;
+  padding-top: 120px;
+}
+
+#contact .contact-wrap .other {
+  opacity: 0;
+  transition: all 1s ease-in-out;
+  color: #fff;
+  word-break: keep-all;
+  line-height: 1.5;
+}
+
+#contact .contact-wrap .other p {
+  color: #c4c4c4;
+}
+
+#contact .contact-wrap .other ul {
+  display: flex;
+  gap: 80px;
+  margin-top: 30px;
+}
+
+#contact .contact-wrap .other ul li img {
+  width: 156px;
+}
+
+
+/* 메일 */
+
+#contact .contact-wrap .mail {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  opacity: 0;
+  transition: all 1s ease-in-out;
+  padding: 30px;
+  background: #111;
+  border-radius: 20px;
+}
+
+/* 메일 인풋 박스 */
+#contact .contact-wrap .mail .input-box {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+/* 메일 인풋 박스, 텍스트 박스 공통 */
+#contact .contact-wrap .mail input,
+#contact .contact-wrap .mail textarea {
+  box-sizing: border-box;
+  width: 100%;
+  border: none;
+  padding: 10px;
+  margin-top: 10px;
+  background: #fff;
+  border-radius: 6px;
+
+  color: #111;
+}
+
+/* 메일 텍스트 박스 */
+#contact .contact-wrap .mail textarea {
+  min-height: 150px;
+}
+
+/* 클릭시 아웃라인 비활성화 */
+#contact .mail input:focus,
+#contact .contact-wrap .mail textarea:focus {
+  outline: none;
+}
+
+/* 보내기 버튼 */
+.mail button {
+  margin-top: 50px;
+  padding: 0.5rem 1.5rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all .4s;
+  background: #6EFA00;
+  border: none;
+  border-radius: 6px;
+  color: #111;
+  display: block;
+  text-align: center;
+  font-weight: 600;
+}
+
+/* 버튼 호버 */
+.mail button:hover {
+  border-radius: 50px;
+}
+
+/* ----- 푸터 ----- */
+
+footer {
+  height: 120px;
+  position: relative;
+  transform: translateY(-100%);
+  border-top: 1px solid #c9c9c9;
+  transition: all .6s;
+}
+
+footer .footer-wrap {
+  position: relative;
+  height: 100%;
+  margin: 0 auto;
+  /* line-height: 120px; */
+  padding: 32px;
+}
+
+footer .footer-wrap p {
+  color: #e4e4e4;
+  line-height: 1.9;
+  text-align: center;
+  display: block;
+  font-weight: 300;
+  font-size: 1.4rem;
+}
+
+/* 탑 버튼 */
+footer .footer-wrap .top-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 0;
+  cursor: pointer;
+  color: #e4e4e4;
+  font-size: 1.8rem;
+}

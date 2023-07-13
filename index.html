@@ -12,8 +12,8 @@
   <!-- css -->
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/font.css">
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/stylem.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/mob_main.css">
   <!-- font -->
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap"
     rel="stylesheet">
@@ -40,210 +40,314 @@
 </head>
 
 <body>
-  <!-- 탑 네비게이션 -->
-  <nav>
-    <!-- 로고 -->
-    <h2 class="hidden">로고</h2>
-    <img class="logo" src="image/logo.png" alt="JE로고">
 
-    <!-- 콘텍트 영역 배경 컬러 보색 -->
-    <img class="con-logo" src="image/logo_w.png" alt="JE로고">
+  <div id="all-wrap">
 
-    <!-- 카테고리 -->
-    <div class="cate-btn">
-      <h2 class="hidden">카테고리 버튼</h2>
-      <span class="ii"></span>
-      <span></span>
-    </div>
+    <!----- 탑 네비게이션 ----->
 
+    <nav>
 
-    <div class="category">
-      <!-- 메뉴 -->
-      <h2 class="hidden">카테고리 메뉴</h2>
-      <ul id="menu">
-        <li>main</li>
-        <li>about</li>
-        <li>project</li>
-        <li>contact us</li>
-      </ul>
-    </div>
-  </nav>
+      <!-- 로고 -->
+      <h2 class="hidden">로고</h2>
+      <img class="logo" src="image/logo2.png" alt="포트폴리오 로고">
+
+      <!-- 카테고리 버튼 -->
+      <div class="cate-btn">
+        <span class="hidden">카테고리 버튼</span>
+        <span class="hidden">카테고리 버튼</span>
+      </div>
+
+      <div class="category">
+        <!-- 카테고리 메뉴 -->
+        <h2 class="hidden">카테고리 메뉴</h2>
+        <ul id="menu">
+          <li><a href="#">main</a></li>
+          <li><a href="#">about</a></li>
+          <li><a href="#">project</a></li>
+          <li><a href="#">contact us</a></li>
+        </ul>
+      </div>
+    </nav>
 
     <!----- 메인 ----->
 
-  <section id="main">
-    <h2 class="hidden">메인 페이지</h2>
+    <section id="main">
+      <h2 class="hidden">메인 페이지</h2>
+      <div class="main-container">
 
-    <!-- 메인 컨테이너 -->
-    <div class="main-container">
-      <!-- 메인 동영상 -->
-      <video autoplay loop muted>
-        <source src="image/run_video.mp4" type="video/mp4">
-      </video>
-      <div class="main-title">
-        <p>완주하는 마라토너처럼</p>
-        <p>목표를 향해 끊임없이 달리는</p>
-        <p><span class="highlight">웹퍼블리셔 jieun</span> 입니다</p>
+        <!-- 메인 동영상 -->
+        <video autoplay loop muted>
+          <source src="image/run_video.mp4" type="video/mp4">
+        </video>
+
+        <!-- 메인 타이틀 랩 -->
+        <div class="main-title-wrap">
+          <p>
+            <span class="main-title">완주하는 마라토너처럼</span>
+          </p>
+          <p>
+            <span class="main-title">목표를 향해 끊임없이 달리는</span>
+          </p>
+          <p class="name">
+            <span class="highlight">Web Publisher Jieun</span>
+          </p>
+        </div>
+
+        <!-- 스크롤 화살표 -->
+        <div class="scroll-arrow">
+          <p>scroll</p>
+          <img src="image/scroll_arrow.png" alt="화살표 아이콘">
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
     <!----- 어바웃 ----->
 
-  <section id="about">
-    <h2 class="hidden">어바웃 페이지</h2>
-    <article class="about-me">
-      <div class="about-img-area">
-        <img src="image/profile_img.png" alt="프로필 이미지">
-        <div class="resume_btn">이력서 보러가기</div>
-      </div>
-      <div class="about-content-area">
-        <h4>안녕하세요!<br> 목표를 향해 달리는<br> 신입 웹퍼블리셔 황지은 입니다:&#41;</h4>
-        <p>
-          저는 프론트엔드도 할 줄 아는 웹퍼블리셔를 최종 목표로 공부하고 있습니다.
-          저에겐 더 나은 웹을 만들기 위해 가장 중요하게 생각하고 실천하는 1순위와 2순위가 있습니다.
-        </p>
-        <p>
-          1순위는 웹 표준, 웹 접근성을 고려한 마크업을 통해 남녀노소 모든 사용자가 불편함 없이 웹을 이용할 수
-          있도록 하는 것 입니다. 웹퍼블리셔로서 기본적으로 지켜야할 규칙이라 생각하고 노력하는 부분입니다.
-        </p>
-        <p>
-          2순위는 트렌드에 맞는 다양한 기능, 동적인 요소들을 익히고 적재적소에 맞게 활용할 수 있도록 공부하여
-          기능은 물론 눈도 함께 즐거울 수 있는 웹을 만드는 것입니다.
-        </p>
-        <p>
-          두가지 순위를 어우르는 궁극적인 목적은 사용자에게 만족감을 줄 수 있는 웹을 만드는 것입니다.
-          그리고 더 나아가 사용자 뿐만 아니라 함께 일하는 동료에게도 좋은 영향력을 줄 수 있는 웹퍼블리셔로서
-          성장하고 싶습니다.
-        </p>
-      </div>
-    </article>
-  </section>
+    <section id="about" class="m-interval">
+      <h2 class="hidden">어바웃 페이지</h2>
+      <article class="about-wrap width-set">
+        <div class="about-me">
 
-  <section id="skills">
-    <ul class="skill-title-box">
-      <li class="skill-title-wrap">
-        <span>skill</span>
-        <img src="image/shose_icon.png" alt="운동화 아이콘">
-      </li>
-    </ul>
-    <div class="skill-wrap">
-      <h4>저는 이러한 일을 할 수 있습니다!</h4>
-      <ul class="skill-contents">
-        <li>
-          <div class="skill-text-wrap">
-            <h5>html & css</h5>
-            <p>웹 표준, 웹 접근성을 준수하여 웹 페이지 제작 </p>
-            <p>시멘틱 마크업을 통한 의미있는 구조 설계</p>
-            <p>미디어 쿼리를 이용한 반응형 웹사이트 구축</p>
+          <!-- 프로필 이미지 영역 -->
+          <div class="about-img-area">
+            <img src="image/profile_img.png" alt="프로필 이미지">
           </div>
-          <img src="image/skill_icon1.png" alt="">
-        </li>
-        <li>
-          <div class="skill-text-wrap">
-            <h5>Javascript</h5>
-            <p>ES6문법 활용</p>
-            <p>Jquery 라이브러리를 이용한 애니메이션 기능 구현</p>
-            <p>장바구니, 로그인, 회원가입, 탭등 웹에서 자주 사용되는 다양한 기능 구현</p>
-          </div>
-          <img src="image/skill_icon2.png" alt="">
-        </li>
-        <li>
-          <div class="skill-text-wrap">
-            <h5>React</h5>
-            <p>JSX문법을 사용하여 HTML과 자바스크립트 동시 작성</p>
-            <p>Component, Props, Router 등 React에 대한 이해</p>
-            <p>React Hook을 활용한 기능 구현</p>
-            <p>Styled-component를 이용한 CSS 작성</p>
-          </div>
-          <img src="image/skill_icon3.png" alt="">
-        </li>
-        <li>
-          <div class="skill-text-wrap">
-            <h5>Others</h5>
-            <p>UIUX에 대한 이해</p>
-            <p>Potoshop, Illustrator, Figma 툴 이용하여 웹 사이트 시안 제작</p>
-            <p>Github 관리</p>
-          </div>
-          <img src="image/skill_icon4.png" alt="">
-        </li>
-      </ul>
-    </div>
-  </section>
 
-  <section id="project">
-    <ul class="project-title-box">
-      <li class="project-title-wrap">
-        <span>project</span>
-        <img src="image/shose_icon.png" alt="운동화 아이콘">
-      </li>
-    </ul>
-    <div class="project-wrap">
-      <h4>Publishing</h4>
-      <ul class="Publishing project-list-wrap">
-        <li>
-          <a href="#">
-            <div class="Pub-project-img">
-              <img src="image/project1.png" alt="이솝 프로젝트 이미지">
+          <!-- 어바웃 콘텐츠 영역 -->
+          <div class="about-content-area">
+
+            <!-- 타이틀 -->
+            <h4 class="title">
+              안녕하세요!<br>
+              목표를 향해 달리는<br>
+              웹퍼블리셔 황지은 입니다:&#41;
+            </h4>
+
+            <!-- 소개 내용 -->
+            <p class="sub-txt">
+              저는 프론트엔드도 할 줄 아는 웹퍼블리셔를 최종 목표로 공부하고 있습니다.
+            </p>
+            <p class="sub-txt">
+              저에겐 더 나은 웹을 만들기 위해 가장 중요하게 생각하고 실천하는 우선 순위가 있습니다.
+              1순위는 웹 표준, 웹 접근성을 고려한 마크업을 통해 남녀노소 모든 사용자가 불편함 없이 웹을 이용할 수
+              있도록 하는 것 입니다. 웹퍼블리셔로서 기본적으로 지켜야할 규칙이라 생각하고 노력하는 부분입니다.
+            </p>
+            <p class="sub-txt">
+              2순위는 트렌드에 맞는 다양한 기능, 동적인 요소들을 익히고 적재적소에 맞게 활용할 수 있도록 공부하여
+              편리성은 물론 눈도 함께 즐거울 수 있는 웹을 만드는 것입니다.
+            </p>
+            <p class="sub-txt">
+              두가지 순위를 어우르는 궁극적인 목적은 사용자에게 만족감을 줄 수 있는 웹을 만드는 것입니다.
+              그리고 더 나아가 사용자 뿐만 아니라 함께 일하는 팀원들에게 좋은 영향력을 줄 수 있는 전문적인 웹퍼블리셔로서
+              성장하고 싶습니다.
+            </p>
+          </div>
+        </div>
+
+        <!-- 장점 -->
+        <div class="advantages">
+
+          <!-- 타이틀 -->
+          <h4 class="title">저는 이런 장점을 가지고 있습니다!</h4>
+
+          <!-- 이미지, 설명 -->
+          <ul>
+            <li>
+              <img src="image/tendency1.svg" alt="웃는 원형 아이콘">
+              <h5>긍정적 사고</h5>
+              <p class="sub-txt">목표를 향해<br> 달려갈 수 있게 해주는 힘</p>
+            </li>
+            <li>
+              <img src="image/tendency2.png" alt="하트를 안고 있는 아이콘">
+              <h5>넓은 포용력</h5>
+              <p class="sub-txt">다름을 인정하고<br> 맞춰갈 수 있는 사람</p>
+            </li>
+            <li>
+              <img src="image/tendency3.png" alt="손을 들고 있는 아이콘">
+              <h5>책임감</h5>
+              <p class="sub-txt">도전과 주어진 일에 끝까지<br> 책임을 질 수 있는 사람</p>
+            </li>
+          </ul>
+        </div>
+      </article>
+    </section>
+
+    <!----- 스킬 ----->
+
+    <section id="skills">
+      <div class="skill-title-container">
+
+        <!-- 스킬 영역 타이틀 스크롤 애니메이션 -->
+        <ul class="skill-title-box">
+          <li class="skill-title-wrap">
+            <span>skill</span>
+          </li>
+        </ul>
+      </div>
+      <div class="skill-wrap width-set m-interval">
+
+        <h4 class="title">저는 이런 일을 할 수 있습니다!</h4>
+
+        <!-- 스킬 내용 -->
+        <ul class="skill-contents">
+
+          <!-- 스킬 1 -->
+          <li>
+            <div class="skill-text-wrap sub-txt">
+              <h5>html & css</h5>
+              <p>웹 표준, 웹 접근성을 준수하여 웹 페이지 제작 </p>
+              <p>시멘틱 마크업을 통한 의미있는 구조 설계</p>
+              <p>미디어 쿼리를 이용한 반응형 웹사이트 구축</p>
             </div>
-            <div class="pub-project-hover">
-              <h5>이솝</h5>
-              <p>#반응형</p>
-              <p>기여도: 100%</p>
-              <p>제작기간: 2023.04 ~ 2023.04 </p>
+            <img src="image/skill1.png" alt="html5, css3 아이콘">
+          </li>
+
+          <!-- 스킬 2 -->
+          <li>
+            <div class="skill-text-wrap sub-txt">
+              <h5>Javascript</h5>
+              <p>ES6문법 활용</p>
+              <p>Jquery 라이브러리를 이용한 애니메이션 기능 구현</p>
+              <p>장바구니, 로그인, 회원가입, 탭등 웹에서 자주 사용되는 다양한 기능 구현</p>
             </div>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <div class="Pub-project-img">
-              <img src="image/project2.png" alt="러쉬 바스밤 프로젝트 이미지">
+            <img src="image/skill2.png" alt="자바스크립트 아이콘">
+          </li>
+
+          <!-- 스킬 3 -->
+          <li>
+            <div class="skill-text-wrap sub-txt">
+              <h5>React</h5>
+              <p>JSX문법을 사용하여 HTML과 자바스크립트 동시 작성</p>
+              <p>Component, Props, Router 등 React에 대한 이해</p>
+              <p>React Hook을 활용한 기능 구현</p>
+              <p>Styled-component를 이용한 CSS 작성</p>
             </div>
-            <div class="pub-project-hover">
-              <h5>러쉬 바스밤</h5>
-              <p>#PC</p>
-              <p>기여도: 100%</p>
-              <p>제작기간: 2023.05 ~ 2023.05 </p>
+            <img src="image/skill3.png" alt="리액트 아이콘">
+          </li>
+
+          <!-- 스킬 4 -->
+          <li>
+            <div class="skill-text-wrap sub-txt">
+              <h5>Others</h5>
+              <p>UIUX에 대한 이해</p>
+              <p>Potoshop, Illustrator, Figma 툴 이용하여 웹 사이트 시안 제작</p>
+              <p>Github 관리</p>
             </div>
-          </a>
-        </li>
-      </ul>
-      <h4>react</h4>
-      <ul class="project-list-wrap">
-        <li>
-          <a href="#">
-            <div class="Pub-project-img">
-              <img src="image/project3.png" alt="러쉬 바스밤 프로젝트 이미지">
-            </div>
-            <div class="pub-project-hover">
-              <h5>루트 프레시</h5>
-              <p>#반응형</p>
-              <p>기여도: 100%</p>
-              <p>제작기간: 2023.01 ~ 2023.03</p>
-            </div>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <div class="Pub-project-img">
-              <img src="image/project4.png" alt="러쉬 바스밤 프로젝트 이미지">
-            </div>
-            <div class="pub-project-hover">
-              <h5>가위바위보 게임</h5>
-              <p>#PC</p>
-              <p>기여도: 100%</p>
-              <p>제작기간: 2023.1 ~ 2023.1 </p>
-            </div>
-          </a>
-        </li>
-      </ul>
-    </div>
-  </section>
+            <img src="image/skill4.png" alt="피그마, 포토샵, 일러스트레이터 아이콘">
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!----- 프로젝트 ------>
+
+    <section id="project">
+      <div class="pro-title-container">
+
+        <!-- 프로젝트 영역 타이틀 스크롤 애니메이션 -->
+        <ul class="project-title-box">
+          <li class="project-title-wrap">
+            <span>project</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="project-wrap width-set m-interval">
+
+        <!-- 퍼블리싱 프로젝트 -->
+        <h4 class="title">Publishing</h4>
+        <ul class="Publishing project-list-wrap">
+
+          <!-- 이솝 프로젝트 -->
+          <li>
+            <a href="easop.html">
+              <div class="Pub-project-img">
+                <img src="image/project1.png" alt="이솝 프로젝트 이미지">
+              </div>
+              <!-- pc -->
+              <div class="pub-project-hover sub-txt">
+                <h5>이솝</h5>
+                <p>#반응형</p>
+                <p>기여도: 100%</p>
+                <p>제작기간: 2023.04 ~ 2023.04 </p>
+              </div>
+            </a>
+          </li>
+
+          <!-- 배쓰밤 프로젝트 -->
+          <li>
+            <a href="bathbomb.html">
+              <div class="Pub-project-img">
+                <img src="image/project2.png" alt="러쉬 배스밤 프로젝트 이미지">
+              </div>
+              <!-- pc -->
+              <div class="pub-project-hover sub-txt">
+                <h5>러쉬 바스밤</h5>
+                <p>#PC</p>
+                <p>기여도: 100%</p>
+                <p>제작기간: 2023.05 ~ 2023.05 </p>
+              </div>
+            </a>
+          </li>
+        </ul>
+
+        <!-- 리액트 프로젝트 -->
+        <h4 class="title">react</h4>
+        <ul class="project-list-wrap">
+
+          <!-- 루트 프레시 프로젝트 -->
+          <li>
+            <a href="#">
+              <div class="Pub-project-img">
+                <img src="image/project3.png" alt="루트 프레시 프로젝트 이미지">
+              </div>
+              <div class="pub-project-hover sub-txt">
+                <h5>루트 프레시</h5>
+                <p>#반응형</p>
+                <p>기여도: 100%</p>
+                <p>제작기간: 2023.01 ~ 2023.03</p>
+              </div>
+            </a>
+          </li>
+
+          <!-- 가위바위보 게임 프로젝트 -->
+          <li>
+            <a href="#">
+              <div class="Pub-project-img">
+                <img src="image/project4.png" alt="가위바위보 게임 프로젝트 이미지">
+              </div>
+              <div class="pub-project-hover sub-txt">
+                <h5>가위바위보 게임</h5>
+                <p>#PC</p>
+                <p>기여도: 100%</p>
+                <p>제작기간: 2023.1 ~ 2023.1 </p>
+              </div>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
 
     <!----- 콘텍트  ----->
 
-  <section id="contact">
-    <h2 class="hidden">콘텍트 페이지</h2>
+    <section id="contact">
+      <h2 class="hidden">콘텍트 페이지</h2>
+      <div class="contact-container m-interval">
+
+        <!-- 섹션 타이틀 -->
+        <h4 class="contact-title">contact us</h4>
+
+        <div class="contact-wrap width-set">
+          <div class="other">
+
+            <!-- 타이틀 -->
+            <h4 class="title">끝까지 봐주셔서<br> 감사합니다 :&#41;</h4>
+
+            <!-- 내용 -->
+            <p class="sub-txt">
+              메일을 보내시거나 카카오톡 qr코드를 통해 오픈 채팅에 참여하실 수 있습니다.
+              깃허브 아이콘을 클릭하시면 깃허브 페이지로 이동합니다.
+            </p>
 
             <!-- 카카오 qr, 깃허브 바로가기 버튼 -->
             <ul>
@@ -293,7 +397,7 @@
         TOP
       </div>
     </div>
-  </section>
+  </footer>
 </body>
 
 </html>

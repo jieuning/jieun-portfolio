@@ -6,7 +6,14 @@ $(document).ready(function () {
     $(".project-title-wrap").clone().appendTo(".project-title-box");
   }
 
-  let projects = $(".contents-wrap ul").length; // 프로젝트 수
+
+  // 메인 렌더링 텍스트 애니메이션 
+  $(".main-title-wrap p .main-title").animate({ "top": 0, "opacity": 1 }, 800, "swing");
+  $(".main-title-wrap .name .highlight").delay(500).animate({ "top": 0, "opacity": 1 }, 800, "swing");
+
+
+
+  // --------------- 스크롤 함수 ---------------
 
   let scrollAni = () => {
 
@@ -21,22 +28,23 @@ $(document).ready(function () {
     // ---------- 메인 텍스트 애니메이션 ----------
 
     let mainOffset = $("#main").offset().top;
-    let mainHeight = $("#main").height();
+    let aboutOffset = $("#about").offset().top;
 
-    // 스크롤 다운
-    if (Scroll >= mainOffset && Scroll <= mainHeight) {
-      $(".bg-wrap img").stop().animate({ "right": Scroll * 0.05 }, 1000, "easeOutExpo");
+    if (Scroll > mainOffset && Scroll < aboutOffset) {
+      $(".main-title-wrap p .main-title").stop().animate({ "top": "-130px", "opacity": 0 }, 500);
+      $(".main-title-wrap .name").addClass("active");
+      $(".main-title-wrap .name").removeClass("back");
     }
-    // 스크롤 업
-    else {
-      $(".bg-wrap img").stop().animate({ "right": -(Scroll * 0.05) }, 1000, "easeOutExpo");
-    }
-
+    else if (Scroll <= mainOffset) {
+      $(".main-title-wrap p .main-title").stop().animate({ "top": 0, "opacity": 1 }, 500);
+      $(".main-title-wrap .name").removeClass("active");
+      $(".main-title-wrap .name").addClass("back");
+    };
 
     // ---------- 어바웃 애니메이션 ----------
 
-    let aboutOffset = $("#about").offset().top;
-    let aboutHeigt = $("#about").height();
+    let advanOffset = $(".advantages").offset().top;
+    let advantages = $(".advantages ul > li");
 
     if (Scroll >= aboutOffset - 400) {
       $(".about-me").stop().animate({ "top": 0, "opacity": 1 }, 500, "easeOutQuad");
@@ -45,16 +53,17 @@ $(document).ready(function () {
       $(".about-me").stop().animate({ "top": "100px", "opacity": 0 }, 500, "easeOutQuad");
     };
 
-    // 스크롤 업
-    // 스크롤 업시 offset에서 height값을 빼야 탑값
-    else if (Scroll <= aboutOffset - aboutHeigt) {
-      // 이미지 애니메이션
-      $(".profile img").removeClass("active");
-      // 텍스트 애니메이션
-      $(".profile-info").removeClass("active");
-      $(".about-title").removeClass("active");
-      $(".about-me li p").removeClass("active");
-      $(".about-me li .about-content").removeClass("active");
+    if (Scroll >= advanOffset - 400) {
+      for (let i = 0; i < advantages.length; i++) {
+        $(".advantages h4").stop().animate({ "top": 0, "opacity": 1 }, 500, "easeOutQuad");
+        advantages.stop().delay(i * 50).eq(i).animate({ "top": 0, "opacity": 1 }, 500, "easeOutBack");
+      };
+    }
+    else {
+      for (let i = 0; i < advantages.length; i++) {
+        $(".advantages h4").stop().animate({ "top": "100px", "opacity": 0 }, 500, "easeOutQuad");
+        advantages.stop().delay(i * 50).eq(i).animate({ "top": "100px", "opacity": 0 }, 500, "easeOutBack");
+      };
     }
 
     // ---------- 스킬 애니메이션 ----------
@@ -92,21 +101,9 @@ $(document).ready(function () {
       if (Scroll > proOffset - 600) {
         projects.stop().animate({ "top": 0, "opacity": 1 }, 500, "swing");
       }
-
-      // 스크롤 업
-      else if (Scroll <= proOffset - height) {
-        // 컨텐츠 애니메이션
-        $(".number").eq(i).removeClass("active");
-        $(".pro-name").eq(i).removeClass("active");
-        $(".pro-skill").eq(i).removeClass("active");
-        $(".description").eq(i).removeClass("active");
-        $(".technique").eq(i).removeClass("active");
-        $(".view-btn").eq(i).removeClass("active");
-
-        // 이미지 애니메이션
-        $(".img-wrap img").eq(i).removeClass("active");
-        $(".img-wrap img").eq(i).addClass("active2");
-      }
+      else {
+        projects.stop().animate({ "top": "100px", "opacity": 0 }, 500, "swing");
+      };
     }
 
 
@@ -114,11 +111,10 @@ $(document).ready(function () {
 
     let contactOffset = $("#contact").offset().top;
 
-    if (Scroll >= contactOffset) {
-      $(".cate-btn span").addClass("bg");
-      $(".section-title").addClass("active");
-      $("#contact").css({ "background": "#111111" });
-      $(".logo").css({ "display": "none" });
+    if (Scroll >= contactOffset - 100) {
+      $(".contact-title").addClass("active");
+      $("#contact").css({ "background": "#151515" });
+      $("footer").css({ "background": "#151515", "opacity": 1 });
       $(".con-logo").css({ "display": "block" });
       $(".other").css({ "opacity": 1 });
       $(".mail").css({ "opacity": 1 });
@@ -126,10 +122,9 @@ $(document).ready(function () {
     }
 
     else if (Scroll < contactOffset) {
-      $(".cate-btn span").removeClass("bg");
-      $(".section-title").removeClass("active");
+      $(".contact-title").removeClass("active");
       $("#contact").css({ "background": "#fff" });
-      $(".logo").css({ "display": "block" });
+      $("footer").css({ "background": "#fff", "opacity": 0 });
       $(".con-logo").css({ "display": "none" });
       $(".other").css({ "opacity": 0 });
       $(".mail").css({ "opacity": 0 });
