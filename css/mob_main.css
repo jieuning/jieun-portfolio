@@ -1,0 +1,402 @@
+@charset 'uft-8';
+
+@media(max-width: 1320px) {
+
+  /* ----- 공용 클래스 ----- */
+
+  .title {
+    font-size: 3.2rem;
+  }
+
+  /* ----- 메인 ----- */
+
+  .main-container .main-title-wrap {
+    font-size: 6.8rem;
+  }
+
+  /* 메인 타이틀 마지막 */
+  .main-container .main-title-wrap .name {
+    font-size: 8.2rem;
+  }
+
+  /* 스크롤 다운시 메인 마지막 텍스트가 중앙으로 이동 */
+  @-webkit-keyframes align {
+    0% {
+      right: 0;
+      transform: translateX(0);
+      font-size: 8.2rem;
+      margin-bottom: 0;
+    }
+
+    100% {
+      right: 50%;
+      transform: translateX(50%);
+      font-size: 9.8rem;
+      margin-bottom: 100px;
+    }
+  }
+
+  @keyframes align {
+    0% {
+      right: 0;
+      transform: translateX(0);
+      font-size: 8.2rem;
+      margin-bottom: 0;
+    }
+
+    100% {
+      right: 50%;
+      transform: translateX(50%);
+      font-size: 9.8rem;
+      margin-bottom: 100px;
+    }
+  }
+
+  /* 스크롤 업시 메인 마지막 텍스트 원래 위치로 이동 */
+  @-webkit-keyframes alignBack {
+    0% {
+      right: 50%;
+      transform: translateX(50%);
+      font-size: 9.8rem;
+      margin-bottom: 100px;
+    }
+
+    100% {
+      right: 0;
+      transform: translateX(0);
+      font-size: 8.2rem;
+      margin-bottom: 0;
+    }
+  }
+
+  @keyframes alignBack {
+    0% {
+      right: 50%;
+      transform: translateX(50%);
+      font-size: 9.8rem;
+      margin-bottom: 100px;
+    }
+
+    100% {
+      right: 0;
+      transform: translateX(0);
+      font-size: 8.2rem;
+      margin-bottom: 0;
+    }
+  }
+}
+
+@media(max-width: 1230px) {
+  .width-set {
+    max-width: 980px;
+  }
+
+  .sub-txt {
+    font-size: 1.6rem;
+  }
+
+  /* 해당 스킬 텍스트 타이틀 */
+  #skills .skill-wrap .skill-contents li h5 {
+    font-size: 2.6rem;
+  }
+
+  /* ----- 콘텍트 ----- */
+
+  /* 콘텍트 타이틀 */
+  #contact .contact-wrap .contact-title {
+    font-size: 9.2rem;
+  }
+
+  /* 스크롤시 애니메이션되는 타이틀 */
+  #contact .contact-wrap .contact-title.active {
+    font-size: 10.6rem;
+  }
+}
+
+@media(max-width: 1150px) {
+  .width-set {
+    max-width: 890px;
+  }
+
+  /* ----- 컨텍트 ----- */
+
+  /* other, mail 사이의 간격 조절 */
+  #contact .contact-wrap {
+    gap: 10rem;
+  }
+}
+
+@media(max-width: 1024px) {
+
+  body,
+  html {
+    font-size: 56%;
+  }
+
+  /* ----- 메인 ----- */
+
+  .main-container .main-title-wrap {
+    align-items: center;
+  }
+
+  .main-container .main-title-wrap .name {
+    justify-content: center;
+  }
+
+  /* 스크롤 다운시 메인 마지막 텍스트가 중앙으로 이동 */
+  @-webkit-keyframes align {
+    0% {
+      font-size: 8.2rem;
+      margin-bottom: 0;
+    }
+
+    100% {
+      font-size: 9.8rem;
+      margin-bottom: 100px;
+    }
+  }
+
+  @keyframes align {
+    0% {
+      font-size: 8.2rem;
+      margin-bottom: 0;
+    }
+
+    100% {
+      font-size: 9.8rem;
+      margin-bottom: 100px;
+    }
+  }
+
+  /* 스크롤 업시 메인 마지막 텍스트 원래 위치로 이동 */
+  @-webkit-keyframes alignBack {
+    0% {
+      font-size: 9.8rem;
+      margin-bottom: 100px;
+    }
+
+    100% {
+      font-size: 8.2rem;
+      margin-bottom: 0;
+    }
+  }
+
+  @keyframes alignBack {
+    0% {
+      font-size: 9.8rem;
+      margin-bottom: 100px;
+    }
+
+    100% {
+      font-size: 8.2rem;
+      margin-bottom: 0;
+    }
+  }
+
+  /* ----- 프로젝트 ----- */
+
+  #project .project-wrap .project-list-wrap {
+    gap: 3rem;
+  }
+
+  #project .project-wrap .project-list-wrap a {
+    filter: drop-shadow(0px 4px 10px rgba(0, 0, 0, 0.1));
+  }
+
+  /* 프로젝트 이미지 */
+  #project .project-wrap .project-list-wrap .Pub-project-img img {
+    filter: none;
+  }
+
+  #project .project-wrap .pub-project-hover {
+    opacity: 1;
+    position: static;
+    height: 0;
+    padding: 60px 0;
+    background: rgba(17, 17, 17, .9);
+    line-height: 1.5;
+    align-items: flex-start;
+    padding-left: 20px;
+  }
+
+  #project .project-wrap .pub-project-hover h5 {
+    font-weight: 500;
+    font-size: 2.2rem;
+  }
+
+  #project .project-wrap .pub-project-hover p {
+    font-weight: 300;
+  }
+
+  /* ----- 컨텍트 ----- */
+
+  #contact {
+    height: 100%;
+    padding: 100px 0;
+  }
+
+  #contact .contact-wrap {
+    height: 100%;
+  }
+
+  /* 컨텍트 타이틀 */
+  #contact .contact-container .contact-title {
+    padding-left: 2.5%;
+    top: -50px;
+  }
+}
+
+@media(max-width: 950px) {
+
+  body,
+  html {
+    font-size: 50%;
+  }
+
+  .width-set {
+    max-width: 680px;
+  }
+
+  .m-interval {
+    padding: 0 20px;
+  }
+
+  .sub-txt {
+    font-size: 1.8rem;
+  }
+
+  /* ----- 메인 ----- */
+
+
+
+  /* ----- 어바웃 ----- */
+
+  #about .about-wrap .about-me {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 50px;
+  }
+
+  #about .about-img-area {
+    position: static;
+  }
+
+  #about .about-img-area img {
+    width: 100%;
+    padding-right: 0;
+  }
+
+  #about .advantages ul {
+    flex-direction: column;
+    gap: 50px;
+  }
+
+  #about .advantages ul li {
+    width: 100%;
+  }
+
+  #about .advantages ul li h5 {
+    font-size: 2.3rem;
+  }
+
+  #about .advantages ul li p {
+    font-size: 1.8rem;
+  }
+
+  /* ----- 컨텍트 ----- */
+
+  #contact .contact-wrap {
+    flex-direction: column;
+    max-width: 680px;
+  }
+
+  #contact .contact-wrap .other ul {
+    justify-content: center;
+  }
+
+  /* 컨텍트 타이틀 */
+  #contact .contact-container .contact-title {
+    font-size: 7.2rem;
+  }
+
+  /* 스크롤시 애니메이션되는 타이틀 */
+  #contact .contact-container .contact-title.active {
+    font-size: 9.2rem;
+  }
+
+  /* ----- 푸터 ----- */
+
+  footer .footer-wrap {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 10px;
+    padding: 22px;
+  }
+
+  footer .footer-wrap .top-btn {
+    position: static;
+    top: 0;
+    transform: translateY(0);
+    text-align: center;
+  }
+}
+
+@media(max-width: 785px) {
+  .main-container .main-title-wrap {
+    font-size: 5.2rem;
+  }
+
+  .main-container .main-title-wrap .name {
+    font-size: 6.4rem;
+  }
+
+    /* 스크롤 다운시 메인 마지막 텍스트가 중앙으로 이동 */
+    @-webkit-keyframes align {
+      0% {
+        font-size: 6.4rem;
+        margin-bottom: 0;
+      }
+  
+      100% {
+        font-size: 7.2rem;
+        margin-bottom: 100px;
+      }
+    }
+  
+    @keyframes align {
+      0% {
+        font-size: 6.4rem;
+        margin-bottom: 0;
+      }
+  
+      100% {
+        font-size: 7.2rem;
+        margin-bottom: 100px;
+      }
+    }
+  
+    /* 스크롤 업시 메인 마지막 텍스트 원래 위치로 이동 */
+    @-webkit-keyframes alignBack {
+      0% {
+        font-size: 7.2rem;
+        margin-bottom: 100px;
+      }
+  
+      100% {
+        font-size: 6.4rem;
+        margin-bottom: 0;
+      }
+    }
+  
+    @keyframes alignBack {
+      0% {
+        font-size: 7.2rem;
+        margin-bottom: 100px;
+      }
+  
+      100% {
+        font-size: 6.4rem;
+        margin-bottom: 0;
+      }
+    }
+}

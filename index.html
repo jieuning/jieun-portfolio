@@ -15,8 +15,7 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/stylem.css">
   <!-- font -->
-  <link
-    href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap"
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap"
     rel="stylesheet">
   <!-- jquery -->
   <script src="https://code.jquery.com/jquery-3.7.0.min.js"
@@ -36,6 +35,7 @@
   <script src="js/category.js"></script>
   <script src="js/skillTab.js"></script>
   <script src="js/menuScroll.js"></script>
+  <script src="js/scrollToTop.js"></script>
   <script src="js/email.js"></script>
 </head>
 
@@ -69,6 +69,7 @@
     </div>
   </nav>
 
+    <!----- 메인 ----->
 
   <section id="main">
     <h2 class="hidden">메인 페이지</h2>
@@ -87,6 +88,7 @@
     </div>
   </section>
 
+    <!----- 어바웃 ----->
 
   <section id="about">
     <h2 class="hidden">어바웃 페이지</h2>
@@ -238,29 +240,57 @@
     </div>
   </section>
 
+    <!----- 콘텍트  ----->
 
   <section id="contact">
     <h2 class="hidden">콘텍트 페이지</h2>
 
-    <div class="contact-wrap">
-      <!-- 콘텍트 타이틀 -->
-      <h4 class="section-title">contact us</h4>
+            <!-- 카카오 qr, 깃허브 바로가기 버튼 -->
+            <ul>
+              <li>
+                <img src="image/kakao_qr.png" alt="카카오톡 qr코드">
+              </li>
+              <li>
+                <a href="https://github.com/jieuning">
+                  <img src="image/github.png" alt="깃허브 아이콘">
+                </a>
+              </li>
+            </ul>
+          </div>
 
-      <!-- emailjs -->
-      <div class="mail">
-        <h2 class="hidden">메일 보내기기</h2>
-        <div class="input-box">
-          <h2 class="hidden">이름 입력칸</h2>
-          <input type="text" id="name" placeholder="이름" required>
-          <h2 class="hidden">이메일 입력칸</h2>
-          <input type="email" id="email" placeholder="이메일" required>
+          <!-- emailjs -->
+          <div class="mail">
+            <h2 class="hidden">메일 보내기</h2>
+            <div class="input-box">
+              <h2 class="hidden">이름 입력칸</h2>
+              <input type="text" id="name" placeholder="이름" required>
+              <h2 class="hidden">이메일 입력칸</h2>
+              <input type="email" id="email" placeholder="이메일" required>
+            </div>
+            <h2 class="hidden">제목 입력칸</h2>
+            <input type="text" id="subject" placeholder="제목" required>
+            <h2 class="hidden">내용 입력 텍스트 박스</h2>
+            <textarea id="message" placeholder="보내실 내용을 입력해주세요." required></textarea>
+            <h2 class="hidden">보내기 버튼</h2>
+            <button onclick="sendEmail()">보내기</button>
+          </div>
         </div>
-        <h2 class="hidden">제목 입력칸</h2>
-        <input type="text" id="subject" placeholder="제목" required><br>
-        <h2 class="hidden">내용 입력 텍스트 박스</h2>
-        <textarea id="message" placeholder="보내실 내용을 입력해주세요."></textarea required><br>
-        <h2 class="hidden">보내기 버튼</h2>
-        <button onclick="sendEmail()">send</button>
+      </div>
+    </section>
+  </div>
+
+  <!----- 푸터 ----->
+
+  <footer>
+    <div class="footer-wrap width-set">
+      <p>
+        상업적 목적이 아닌 개인 포트폴리오 목적으로 만들어진 사이트입니다.<br>
+        © 2023 Jieun All rights reserved.
+      </p>
+
+      <!-- 탑 버튼 -->
+      <div class="top-btn">
+        TOP
       </div>
     </div>
   </section>

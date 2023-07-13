@@ -1,5 +1,5 @@
 $(document).ready(function () {
-  $(".cate-btn").click(function() {
+  $(".cate-btn").click(function () {
     // 카테고리 열림/닫힘
     $(".category").toggleClass("open");
 

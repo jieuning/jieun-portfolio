@@ -1,0 +1,174 @@
+@charset "utf-8";
+
+/* ----- 공용 스타일 ----- */
+
+* {
+    box-sizing: border-box;
+}
+
+body,
+html {
+  max-width: 1920px;
+  height: 100%;
+  font-family: 'Noto Sans KR', sans-serif;
+  cursor: default;
+  color: #111111;
+}
+
+.de-title {
+    font-size: 26px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    font-family: "NHaas-M";
+    margin: 80px 0 30px 0;
+}
+
+.de-sub {
+    line-height: 1.5;
+    word-break: keep-all;
+}
+
+.color-title {
+    color: #929292;
+    margin-bottom: 20px;
+}
+
+#all-wrap {
+    min-height: calc(100% - 150px);
+    padding-bottom: 230px;
+
+}
+
+/* ----- 메인 영역 ----- */
+
+main {
+    width: 100%;
+    height: 100vh;
+    margin: 0 auto;
+}
+
+main .main-container {
+    width: 100%;
+    height: 100%;
+    background: url(../image/bathbomb_bg.png) no-repeat center center;
+    background-size: cover;
+}
+
+main .main-container2 {
+    width: 100%;
+    height: 100%;
+    background: url(../image/easop_bg.png) no-repeat center center;
+    background-size: cover;
+}
+
+main .main-container3 {
+    width: 100%;
+    height: 100%;
+    background: url(../image/rootfresh_bg.png) no-repeat center center;
+    background-size: cover;
+}
+
+main .main-wrap {
+    max-width: 1060px;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+main .pro-content {
+    color: #fff;
+}
+
+main .pro-content .pro-title {
+    font-size: 72px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+main .pro-content .sub {
+    line-height: 1.5;
+    margin-top: 20px;
+}
+
+main .pro-content .site-view {
+    background: #111111;
+    display: inline-block;
+    padding: 12px 20px;
+    font-size: 14px;
+    margin-top: 50px;
+    cursor: pointer;
+    transition: all .4s;
+}
+
+main .pro-content .site-view:hover {
+    border-radius: 50px;
+}
+
+/* ----- 디테일 영역 ----- */
+
+.detail {
+    max-width: 1060px;
+    height: 100%;
+    margin: 0 auto;
+}
+
+.detail .overview .de-bg {
+    background: #eee;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.detail .styleguide div .color-img1 {
+    width: 28%;
+}
+
+.detail .styleguide div .color-img2 {
+    width: 56%;
+}
+
+.detail .typography .typo-img {
+    width: 62%;
+}
+
+.detail .design img {
+    max-width: 1060px;
+    height: 100%;
+}
+
+/* ----- 푸터 ----- */
+
+footer {
+    width: 100%;
+    height: 150px;
+    position: relative;
+    transform: translateY(-100%);
+    border-top: 1px solid #111;
+}
+
+footer .footer-wrap {
+    position: relative;
+    max-width: 1060px;
+    margin: 0 auto;
+    line-height: 150px;
+}
+
+footer .footer-wrap p {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    float: left;
+}
+
+footer .footer-wrap .top-btn {
+    position: absolute;
+    right: 0;
+    cursor: pointer;
+}
+
+
+
+
+
+

@@ -1,7 +1,7 @@
 $(document).ready(function () {
 
   // loop애니메이션을 위해 복사
-  for (i = 0; i < 4; i++) {
+  for (i = 0; i < 6; i++) {
     $(".skill-title-wrap").clone().appendTo(".skill-title-box");
     $(".project-title-wrap").clone().appendTo(".project-title-box");
   }
@@ -12,9 +12,13 @@ $(document).ready(function () {
 
     // 실시간 스크롤 탑값
     let Scroll = $(window).scrollTop();
+    console.log(Scroll)
 
+    // section 타이틀 애니메이션
+    $(".skill-title-box").stop().animate({ "right": (Scroll - 1000) * 0.1 }, 2000, "easeOutExpo");
+    $(".project-title-box").stop().animate({ "right": -(Scroll - 5000) * 0.1 }, 2000, "easeOutExpo");
 
-    // ---------- 메인 이미지 스크롤 애니메이션 ----------
+    // ---------- 메인 텍스트 애니메이션 ----------
 
     let mainOffset = $("#main").offset().top;
     let mainHeight = $("#main").height();
@@ -34,15 +38,12 @@ $(document).ready(function () {
     let aboutOffset = $("#about").offset().top;
     let aboutHeigt = $("#about").height();
 
-    // 스크롤 다운
-    if (Scroll >= aboutOffset - 200) {
-      // 이미지 애니메이션
-      $(".profile img").addClass("active");
-      // 텍스트 애니메이션
-      $(".profile-info").addClass("active");
-      $(".about-title").addClass("active");
-      $(".about-me li .about-content").addClass("active");
+    if (Scroll >= aboutOffset - 400) {
+      $(".about-me").stop().animate({ "top": 0, "opacity": 1 }, 500, "easeOutQuad");
     }
+    else {
+      $(".about-me").stop().animate({ "top": "100px", "opacity": 0 }, 500, "easeOutQuad");
+    };
 
     // 스크롤 업
     // 스크롤 업시 offset에서 height값을 빼야 탑값
@@ -56,26 +57,40 @@ $(document).ready(function () {
       $(".about-me li .about-content").removeClass("active");
     }
 
+    // ---------- 스킬 애니메이션 ----------
+
+    let skillOffset = $("#skills").offset().top;
+    let skills = $(".skill-contents li").length;
+
+    for (let i = 0; i < skills; i++) {
+
+      let skillsOffset = $(".skill-contents li").eq(i).offset().top;
+
+      if (Scroll >= skillOffset - 300) {
+        $(".skill-wrap h4").stop().animate({ "top": 0, "opacity": 1 }, 500, "easeOutQuad");
+      }
+      else {
+        $(".skill-wrap h4").stop().animate({ "top": "100px", "opacity": 0 }, 500, "easeOutQuad");
+      };
+
+      if (Scroll >= skillsOffset - 600) {
+        $(".skill-contents li").eq(i).stop().animate({ "top": 0, "opacity": 1 }, 500, "easeOutBack");
+      }
+      else {
+        $(".skill-contents li").eq(i).stop().animate({ "top": "100px", "opacity": 0 }, 500, "easeOutBack");
+      };
+    };
 
     // ---------- 프로젝트 애니메이션 ----------
 
-    for (let i = 0; i < projects; i++) {
-      let proOffset = $(".contents-wrap ul").eq(i).offset().top;
-      let height = $(".contents-wrap ul").height();
+    let projects = $(".project-wrap");
+
+    for (let i = 0; i < projects.length; i++) {
+      let proOffset = $(".project-wrap").offset().top;
 
       // 스크롤 다운
-      if (Scroll > proOffset - 300) {
-        // 컨텐츠 애니메이션
-        $(".number").eq(i).addClass("active");
-        $(".pro-name").eq(i).addClass("active");
-        $(".pro-skill").eq(i).addClass("active");
-        $(".description").eq(i).addClass("active");
-        $(".technique").eq(i).addClass("active");
-        $(".view-btn").eq(i).addClass("active");
-
-        // 이미지 애니메이션
-        $(".img-wrap img").eq(i).addClass("active");
-        $(".img-wrap img").eq(i).removeClass("active2");
+      if (Scroll > proOffset - 600) {
+        projects.stop().animate({ "top": 0, "opacity": 1 }, 500, "swing");
       }
 
       // 스크롤 업
@@ -95,7 +110,7 @@ $(document).ready(function () {
     }
 
 
-    // ---------- 콘텍트 애니메이션 ----------
+    // ---------- 컨텍트 애니메이션 ----------
 
     let contactOffset = $("#contact").offset().top;
 
@@ -105,7 +120,8 @@ $(document).ready(function () {
       $("#contact").css({ "background": "#111111" });
       $(".logo").css({ "display": "none" });
       $(".con-logo").css({ "display": "block" });
-      $(".mail").css({ "transform": "translateY(0)", "opacity": 1 });
+      $(".other").css({ "opacity": 1 });
+      $(".mail").css({ "opacity": 1 });
 
     }
 
@@ -115,7 +131,8 @@ $(document).ready(function () {
       $("#contact").css({ "background": "#fff" });
       $(".logo").css({ "display": "block" });
       $(".con-logo").css({ "display": "none" });
-      $(".mail").css({ "transform": "translateY(200px)", "opacity": 0 });
+      $(".other").css({ "opacity": 0 });
+      $(".mail").css({ "opacity": 0 });
     }
   }
 
