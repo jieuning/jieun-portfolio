@@ -19,7 +19,6 @@ $(document).ready(function () {
 
     // 실시간 스크롤 탑값
     let Scroll = $(window).scrollTop();
-    console.log(Scroll)
 
     // section 타이틀 애니메이션
     $(".skill-title-box").stop().animate({ "right": (Scroll - 1000) * 0.1 }, 2000, "easeOutExpo");
@@ -50,7 +49,7 @@ $(document).ready(function () {
       $(".about-me").stop().animate({ "top": 0, "opacity": 1 }, 500, "easeOutQuad");
     }
     else {
-      $(".about-me").stop().animate({ "top": "100px", "opacity": 0 }, 500, "easeOutQuad");
+      $(".about-me").stop().animate({ "top": "10rem", "opacity": 0 }, 500, "easeOutQuad");
     };
 
     if (Scroll >= advanOffset - 400) {
@@ -61,8 +60,8 @@ $(document).ready(function () {
     }
     else {
       for (let i = 0; i < advantages.length; i++) {
-        $(".advantages h4").stop().animate({ "top": "100px", "opacity": 0 }, 500, "easeOutQuad");
-        advantages.stop().delay(i * 50).eq(i).animate({ "top": "100px", "opacity": 0 }, 500, "easeOutBack");
+        $(".advantages h4").stop().animate({ "top": "10rem", "opacity": 0 }, 500, "easeOutQuad");
+        advantages.stop().delay(i * 50).eq(i).animate({ "top": "10rem", "opacity": 0 }, 500, "easeOutBack");
       };
     }
 
@@ -79,14 +78,14 @@ $(document).ready(function () {
         $(".skill-wrap h4").stop().animate({ "top": 0, "opacity": 1 }, 500, "easeOutQuad");
       }
       else {
-        $(".skill-wrap h4").stop().animate({ "top": "100px", "opacity": 0 }, 500, "easeOutQuad");
+        $(".skill-wrap h4").stop().animate({ "top": "10rem", "opacity": 0 }, 500, "easeOutQuad");
       };
 
       if (Scroll >= skillsOffset - 600) {
         $(".skill-contents li").eq(i).stop().animate({ "top": 0, "opacity": 1 }, 500, "easeOutBack");
       }
       else {
-        $(".skill-contents li").eq(i).stop().animate({ "top": "100px", "opacity": 0 }, 500, "easeOutBack");
+        $(".skill-contents li").eq(i).stop().animate({ "top": "10rem", "opacity": 0 }, 500, "easeOutBack");
       };
     };
 
@@ -102,7 +101,7 @@ $(document).ready(function () {
         projects.stop().animate({ "top": 0, "opacity": 1 }, 500, "swing");
       }
       else {
-        projects.stop().animate({ "top": "100px", "opacity": 0 }, 500, "swing");
+        projects.stop().animate({ "top": "10rem", "opacity": 0 }, 500, "swing");
       };
     }
 

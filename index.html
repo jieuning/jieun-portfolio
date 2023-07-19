@@ -8,7 +8,7 @@
   <title>jieun portfolio</title>
 
   <!-- favicon -->
-  <link rel="icon" href="image/favicon.png">
+  <link rel="icon" href="image/logo.png">
   <!-- css -->
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/font.css">
@@ -33,7 +33,6 @@
   <!-- script -->
   <script src="js/scrollAni.js"></script>
   <script src="js/category.js"></script>
-  <script src="js/skillTab.js"></script>
   <script src="js/menuScroll.js"></script>
   <script src="js/scrollToTop.js"></script>
   <script src="js/email.js"></script>
@@ -41,33 +40,33 @@
 
 <body>
 
+  <!----- 탑 네비게이션 ----->
+
+  <nav>
+    <!-- 로고 -->
+    <h2 class="hidden">로고</h2>
+    <img class="logo" src="image/logo2.png" alt="포트폴리오 로고">
+
+    <!-- 카테고리 버튼 -->
+    <div class="cate-btn">
+      <span class="hidden">카테고리 버튼</span>
+      <span class="hidden">카테고리 버튼</span>
+    </div>
+
+    <div class="category">
+      <!-- 카테고리 메뉴 -->
+      <h2 class="hidden">카테고리 메뉴</h2>
+      <ul id="menu">
+        <li class="on">main</li>
+        <li>about</li>
+        <li>skill</li>
+        <li>project</li>
+        <li>contact us</li>
+      </ul>
+    </div>
+  </nav>
+
   <div id="all-wrap">
-
-    <!----- 탑 네비게이션 ----->
-
-    <nav>
-
-      <!-- 로고 -->
-      <h2 class="hidden">로고</h2>
-      <img class="logo" src="image/logo2.png" alt="포트폴리오 로고">
-
-      <!-- 카테고리 버튼 -->
-      <div class="cate-btn">
-        <span class="hidden">카테고리 버튼</span>
-        <span class="hidden">카테고리 버튼</span>
-      </div>
-
-      <div class="category">
-        <!-- 카테고리 메뉴 -->
-        <h2 class="hidden">카테고리 메뉴</h2>
-        <ul id="menu">
-          <li><a href="#">main</a></li>
-          <li><a href="#">about</a></li>
-          <li><a href="#">project</a></li>
-          <li><a href="#">contact us</a></li>
-        </ul>
-      </div>
-    </nav>
 
     <!----- 메인 ----->
 
@@ -114,7 +113,7 @@
           </div>
 
           <!-- 어바웃 콘텐츠 영역 -->
-          <div class="about-content-area">
+          <div class="about-content-area m-center">
 
             <!-- 타이틀 -->
             <h4 class="title">
@@ -148,22 +147,22 @@
         <div class="advantages">
 
           <!-- 타이틀 -->
-          <h4 class="title">저는 이런 장점을 가지고 있습니다!</h4>
+          <h4 class="title m-center">저는 이런 장점을 가지고 있습니다!</h4>
 
           <!-- 이미지, 설명 -->
           <ul>
             <li>
-              <img src="image/tendency1.svg" alt="웃는 원형 아이콘">
+              <img src="image/advantages1.svg" alt="반짝 빛나는 스마일 아이콘">
               <h5>긍정적 사고</h5>
               <p class="sub-txt">목표를 향해<br> 달려갈 수 있게 해주는 힘</p>
             </li>
             <li>
-              <img src="image/tendency2.png" alt="하트를 안고 있는 아이콘">
+              <img src="image/advantages2.svg" alt="하트를 안고 있는 아이콘">
               <h5>넓은 포용력</h5>
               <p class="sub-txt">다름을 인정하고<br> 맞춰갈 수 있는 사람</p>
             </li>
             <li>
-              <img src="image/tendency3.png" alt="손을 들고 있는 아이콘">
+              <img src="image/advantages3.svg" alt="손을 들고 있는 아이콘">
               <h5>책임감</h5>
               <p class="sub-txt">도전과 주어진 일에 끝까지<br> 책임을 질 수 있는 사람</p>
             </li>
@@ -186,10 +185,10 @@
       </div>
       <div class="skill-wrap width-set m-interval">
 
-        <h4 class="title">저는 이런 일을 할 수 있습니다!</h4>
+        <h4 class="title m-center">저는 이런 일을 할 수 있습니다!</h4>
 
         <!-- 스킬 내용 -->
-        <ul class="skill-contents">
+        <ul class="skill-contents m-center">
 
           <!-- 스킬 1 -->
           <li>
@@ -199,7 +198,7 @@
               <p>시멘틱 마크업을 통한 의미있는 구조 설계</p>
               <p>미디어 쿼리를 이용한 반응형 웹사이트 구축</p>
             </div>
-            <img src="image/skill1.png" alt="html5, css3 아이콘">
+            <img src="image/skill1.svg" alt="html5, css3 아이콘">
           </li>
 
           <!-- 스킬 2 -->
@@ -210,7 +209,7 @@
               <p>Jquery 라이브러리를 이용한 애니메이션 기능 구현</p>
               <p>장바구니, 로그인, 회원가입, 탭등 웹에서 자주 사용되는 다양한 기능 구현</p>
             </div>
-            <img src="image/skill2.png" alt="자바스크립트 아이콘">
+            <img src="image/skill2.svg" alt="자바스크립트 아이콘">
           </li>
 
           <!-- 스킬 3 -->
@@ -222,7 +221,7 @@
               <p>React Hook을 활용한 기능 구현</p>
               <p>Styled-component를 이용한 CSS 작성</p>
             </div>
-            <img src="image/skill3.png" alt="리액트 아이콘">
+            <img src="image/skill3.svg" alt="리액트 아이콘">
           </li>
 
           <!-- 스킬 4 -->
@@ -233,7 +232,7 @@
               <p>Potoshop, Illustrator, Figma 툴 이용하여 웹 사이트 시안 제작</p>
               <p>Github 관리</p>
             </div>
-            <img src="image/skill4.png" alt="피그마, 포토샵, 일러스트레이터 아이콘">
+            <img src="image/skill4.svg" alt="피그마, 포토샵, 일러스트레이터 아이콘">
           </li>
         </ul>
       </div>
@@ -255,7 +254,7 @@
       <div class="project-wrap width-set m-interval">
 
         <!-- 퍼블리싱 프로젝트 -->
-        <h4 class="title">Publishing</h4>
+        <h4 class="title m-center">Publishing</h4>
         <ul class="Publishing project-list-wrap">
 
           <!-- 이솝 프로젝트 -->
@@ -292,7 +291,7 @@
         </ul>
 
         <!-- 리액트 프로젝트 -->
-        <h4 class="title">react</h4>
+        <h4 class="title m-center">react</h4>
         <ul class="project-list-wrap">
 
           <!-- 루트 프레시 프로젝트 -->
@@ -335,9 +334,9 @@
       <div class="contact-container m-interval">
 
         <!-- 섹션 타이틀 -->
-        <h4 class="contact-title">contact us</h4>
+        <h4 class="contact-title m-center">contact us</h4>
 
-        <div class="contact-wrap width-set">
+        <div class="contact-wrap width-set m-center">
           <div class="other">
 
             <!-- 타이틀 -->
@@ -345,18 +344,18 @@
 
             <!-- 내용 -->
             <p class="sub-txt">
-              메일을 보내시거나 카카오톡 qr코드를 통해 오픈 채팅에 참여하실 수 있습니다.
-              깃허브 아이콘을 클릭하시면 깃허브 페이지로 이동합니다.
+              메일을 보내시거나 카카오톡 QR코드를 통해 오픈 채팅에 참여하실 수 있습니다.
+              고양이 모양의 아이콘을 클릭하시면 깃허브 페이지로 이동합니다.
             </p>
 
             <!-- 카카오 qr, 깃허브 바로가기 버튼 -->
             <ul>
               <li>
-                <img src="image/kakao_qr.png" alt="카카오톡 qr코드">
+                <img src="image/kakao_qr.png" alt="카카오톡 오픈 채팅 qr코드">
               </li>
               <li>
                 <a href="https://github.com/jieuning">
-                  <img src="image/github.png" alt="깃허브 아이콘">
+                  <img src="image/github.png" alt="고양이 모양 깃허브 아이콘">
                 </a>
               </li>
             </ul>

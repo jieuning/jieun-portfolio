@@ -1,22 +1,28 @@
-document.addEventListener('DOMContentLoaded', () => {
-  const menu = document.querySelectorAll('.category #menu li');
-  const section1 = document.querySelector('#main');
-  const section2 = document.querySelector('#about');
-  const section3 = document.querySelector('#project');
-  const section4 = document.querySelector('#contact');
-  const top1 = section1.offsetTop;
-  const top2 = section2.offsetTop;
-  const top3 = section3.offsetTop;
-  const top4 = section4.offsetTop;
+$(document).ready(function () {
+  let menu = $(".category #menu li"),
+      sections = $("#all-wrap > section");
 
-  const menuArr = [
-    top1, top2, top3, top4
-  ]
+  // 메뉴를 클릭했을 때 스크롤 이동
+  menu.click(function () {
 
-  // 카테고리 메뉴 클릭시 해당 offsetTop값으로 스크롤 이동
-  menuArr.forEach((arr, i) => {
-    menu[i].onclick = () => {
-      window.scroll({ top: arr, behavior: "smooth" })
-    };
+    let idx = $(this).index();
+    let sectionIdx = sections.eq(idx);
+    let sectionOffset = sectionIdx.offset().top;
+
+    // 스크롤 이동
+    $("html, body").stop().animate({ "scrollTop": sectionOffset });
+  });
+
+  // 스크롤 했을 때 해당 메뉴 활성화
+  $(window).scroll(function() {
+    sections.each(function() {
+      if($(window).scrollTop() >= $(this).offset().top - 10) {
+
+        let idx = $(this).index();
+
+        menu.removeClass("on");
+        menu.eq(idx).addClass("on");
+      }
+    });
   });
 });
