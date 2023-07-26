@@ -1,16 +1,19 @@
 $(document).ready(function () {
 
+
+  // 높이값 설정
+  $(".contact-wrap").css({height: $(window).innerHeight() - 120});
+
   // loop애니메이션을 위해 복사
-  for (i = 0; i < 6; i++) {
+  for (i = 0; i < 4; i++) {
     $(".skill-title-wrap").clone().appendTo(".skill-title-box");
     $(".project-title-wrap").clone().appendTo(".project-title-box");
   }
 
 
-  // 메인 렌더링 텍스트 애니메이션 
-  $(".main-title-wrap p .main-title").animate({ "top": 0, "opacity": 1 }, 800, "swing");
-  $(".main-title-wrap .name .highlight").delay(500).animate({ "top": 0, "opacity": 1 }, 800, "swing");
-
+  // 메인 텍스트 초기 애니메이션 
+  $(".main-title-wrap p .main-title").addClass("animate");
+  $(".main-title-wrap .name .highlight").addClass("animate");
 
 
   // --------------- 스크롤 함수 ---------------
@@ -20,22 +23,19 @@ $(document).ready(function () {
     // 실시간 스크롤 탑값
     let Scroll = $(window).scrollTop();
 
-    // section 타이틀 애니메이션
-    $(".skill-title-box").stop().animate({ "right": (Scroll - 1000) * 0.1 }, 2000, "easeOutExpo");
-    $(".project-title-box").stop().animate({ "right": -(Scroll - 5000) * 0.1 }, 2000, "easeOutExpo");
-
     // ---------- 메인 텍스트 애니메이션 ----------
 
     let mainOffset = $("#main").offset().top;
     let aboutOffset = $("#about").offset().top;
 
     if (Scroll > mainOffset && Scroll < aboutOffset) {
-      $(".main-title-wrap p .main-title").stop().animate({ "top": "-130px", "opacity": 0 }, 500);
+      $(".main-title-wrap p .main-title").removeClass("animate");
       $(".main-title-wrap .name").addClass("active");
       $(".main-title-wrap .name").removeClass("back");
     }
     else if (Scroll <= mainOffset) {
-      $(".main-title-wrap p .main-title").stop().animate({ "top": 0, "opacity": 1 }, 500);
+
+      $(".main-title-wrap p .main-title").addClass("animate");
       $(".main-title-wrap .name").removeClass("active");
       $(".main-title-wrap .name").addClass("back");
     };
@@ -45,23 +45,23 @@ $(document).ready(function () {
     let advanOffset = $(".advantages").offset().top;
     let advantages = $(".advantages ul > li");
 
-    if (Scroll >= aboutOffset - 400) {
-      $(".about-me").stop().animate({ "top": 0, "opacity": 1 }, 500, "easeOutQuad");
+    if (Scroll >= aboutOffset - 500) {
+      $(".about-me").addClass("animate");
     }
     else {
-      $(".about-me").stop().animate({ "top": "10rem", "opacity": 0 }, 500, "easeOutQuad");
+      $(".about-me").removeClass("animate");
     };
 
     if (Scroll >= advanOffset - 400) {
       for (let i = 0; i < advantages.length; i++) {
-        $(".advantages h4").stop().animate({ "top": 0, "opacity": 1 }, 500, "easeOutQuad");
-        advantages.stop().delay(i * 50).eq(i).animate({ "top": 0, "opacity": 1 }, 500, "easeOutBack");
+        $(".advantages h4").addClass("animate");
+        advantages.addClass("animate");
       };
     }
     else {
       for (let i = 0; i < advantages.length; i++) {
-        $(".advantages h4").stop().animate({ "top": "10rem", "opacity": 0 }, 500, "easeOutQuad");
-        advantages.stop().delay(i * 50).eq(i).animate({ "top": "10rem", "opacity": 0 }, 500, "easeOutBack");
+        $(".advantages h4").removeClass("animate");
+        advantages.removeClass("animate");
       };
     }
 
@@ -75,17 +75,17 @@ $(document).ready(function () {
       let skillsOffset = $(".skill-contents li").eq(i).offset().top;
 
       if (Scroll >= skillOffset - 300) {
-        $(".skill-wrap h4").stop().animate({ "top": 0, "opacity": 1 }, 500, "easeOutQuad");
+        $(".skill-wrap h4").addClass("animate");
       }
       else {
-        $(".skill-wrap h4").stop().animate({ "top": "10rem", "opacity": 0 }, 500, "easeOutQuad");
+        $(".skill-wrap h4").removeClass("animate");
       };
 
       if (Scroll >= skillsOffset - 600) {
-        $(".skill-contents li").eq(i).stop().animate({ "top": 0, "opacity": 1 }, 500, "easeOutBack");
+        $(".skill-contents li").eq(i).addClass("animate");
       }
       else {
-        $(".skill-contents li").eq(i).stop().animate({ "top": "10rem", "opacity": 0 }, 500, "easeOutBack");
+        $(".skill-contents li").eq(i).removeClass("animate");
       };
     };
 
@@ -98,10 +98,10 @@ $(document).ready(function () {
 
       // 스크롤 다운
       if (Scroll > proOffset - 600) {
-        projects.stop().animate({ "top": 0, "opacity": 1 }, 500, "swing");
+        projects.addClass("animate");
       }
       else {
-        projects.stop().animate({ "top": "10rem", "opacity": 0 }, 500, "swing");
+        projects.removeClass("animate")
       };
     }
 
@@ -110,23 +110,18 @@ $(document).ready(function () {
 
     let contactOffset = $("#contact").offset().top;
 
-    if (Scroll >= contactOffset - 100) {
-      $(".contact-title").addClass("active");
+    if (Scroll >= contactOffset - 10) {
+      $(".contact-title").addClass("animate");
+      $(".contact-wrap").addClass("animate");
       $("#contact").css({ "background": "#151515" });
       $("footer").css({ "background": "#151515", "opacity": 1 });
-      $(".con-logo").css({ "display": "block" });
-      $(".other").css({ "opacity": 1 });
-      $(".mail").css({ "opacity": 1 });
-
     }
 
     else if (Scroll < contactOffset) {
-      $(".contact-title").removeClass("active");
+      $(".contact-title").removeClass("animate");
+      $(".contact-wrap").removeClass("animate");
       $("#contact").css({ "background": "#fff" });
       $("footer").css({ "background": "#fff", "opacity": 0 });
-      $(".con-logo").css({ "display": "none" });
-      $(".other").css({ "opacity": 0 });
-      $(".mail").css({ "opacity": 0 });
     }
   }
 

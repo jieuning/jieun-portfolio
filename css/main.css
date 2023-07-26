@@ -29,6 +29,10 @@ body::-webkit-scrollbar-thumb {
   border: 2px solid #fff;
 }
 
+#all-wrap {
+  min-height: calc(100% - 120px);
+}
+
 section {
   width: 100%;
   height: 100%;
@@ -40,11 +44,11 @@ section {
 }
 
 .hidden {
+  position: absolute;
   width: 1px;
   height: 1px;
   font-size: 0px;
   line-height: 0px;
-  position: absolute;
   z-index: 99999;
 }
 
@@ -52,11 +56,15 @@ section {
   font-size: 3.2rem;
   font-weight: 600;
   line-height: 1.2;
-  margin-bottom: 3rem;
+  padding-bottom: 6rem;
 }
 
 .sub-txt {
   font-size: 1.8rem;
+}
+
+.bottom {
+  padding-bottom: 200px;
 }
 
 /* 요소 숨기기(애니메이션 효과) */
@@ -66,68 +74,88 @@ section {
 }
 
 /* 타이틀 스크롤 텍스트 애니메이션 공통 */
-
 .skill-title-container,
 .pro-title-container {
   border-top: 2px solid #111111;
   border-bottom: 2px solid #111111;
-  padding: 3rem 0;
   overflow: hidden;
+  position: relative;
+  height: 11.2rem;
+  margin-bottom: 200px;
 }
 
 #skills .skill-title-container .skill-title-box,
 #project .pro-title-container .project-title-box {
-  position: relative;
+  top: 50%;
+  width: 100%;
+  height: 100%;
   display: flex;
-  flex-direction: row;
+  gap: 30px;
+  animation: textAni 35s linear infinite;
+}
+
+@keyframes textAni {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-100%)
+  }
 }
 
 #skills .skill-title-box .skill-title-wrap,
 #project .project-title-box .project-title-wrap {
-  display: flex;
-  flex-direction: row;
-}
-
-#skills .skill-title-box .skill-title-wrap span,
-#project .project-title-box .project-title-wrap span {
   font-size: 4.8rem;
   text-transform: uppercase;
   font-family: "NHaas-B";
-  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  gap: 30px;
 }
 
-#all-wrap {
-  min-height: calc(100% - 120px);
-  padding-bottom: 120px;
+#skills .skill-title-box .skill-title-wrap i,
+#project .project-title-box .project-title-wrap i {
+  width: 24px;
+  height: 24px;
+  background: url(../image/sparkle_icon.png) no-repeat;
+  background-size: 24px;
+  font-size: 0px;
+  line-height: 0px;
+  z-index: 99999;
 }
 
-/* ----- 네비게이션(로고, 카테고리) ----- */
+/* 애니메이션 공통 */
+.quart {
+  -webkit-transition: 1s cubic-bezier(0.25, 1, 0.5, 1);
+  transition: 1s cubic-bezier(0.25, 1, 0.5, 1);
+}
 
-nav {
-  position: absolute;
-  width: 100%;
+/* ----- 헤더 ----- */
+
+header {
+  position: fixed;
+  max-width: 1600px;
   padding: 30px 2.6%;
-  box-sizing: border-box;
   z-index: 1;
 }
 
 /* 로고 */
-nav .logo {
-  position: fixed;
+header .logo {
   width: 4.8rem;
   float: left;
+  cursor: pointer;
 }
 
 /* 콘텍트 센션 로고 색상 변경 */
-nav .con-logo {
-  position: fixed;
+header .con-logo {
   width: 38px;
   float: left;
   display: none;
 }
 
 /* 카테고리 버튼 */
-nav .cate-btn {
+header .cate-btn {
   position: fixed;
   right: 0;
   cursor: pointer;
@@ -136,40 +164,41 @@ nav .cate-btn {
 }
 
 /* 카테고리 버튼 라인 생성 */
-nav .cate-btn span {
+header .cate-btn span {
   position: relative;
   display: block;
   width: 4.2rem;
   height: 0.4rem;
   background: #6EFA00;
   border-radius: 5rem;
+  -webkit-transition: all .5s;
   transition: all .5s;
 }
 
 /* 스크롤 값이 콘텍트 섹션에 진입하면 색상 변경 */
-nav .cate-btn span.bg {
+header .cate-btn span.bg {
   background: #fff;
 }
 
-nav .cate-btn span:nth-child(1) {
+header .cate-btn span:nth-child(1) {
   margin-bottom: 0.8rem;
 }
 
 /* 카테고리 라인 close버튼 토글 */
-nav .cate-btn span:nth-child(1).toggle {
+header .cate-btn span:nth-child(1).toggle {
   transform: rotate(135deg);
   background-color: #fff;
   top: 3px;
   margin: 0;
 }
 
-nav .cate-btn span:nth-child(2).toggle {
+header .cate-btn span:nth-child(2).toggle {
   transform: rotate(-135deg);
   background-color: #fff;
 }
 
 /* 카테고리 */
-nav .category {
+header .category {
   position: fixed;
   top: 0;
   right: 0;
@@ -179,16 +208,17 @@ nav .category {
   padding: 0 10%;
   box-sizing: border-box;
   clip-path: inset(0 0 0 100%);
+  -webkit-transition: all 1s ease-in-out;
   transition: all 1s ease-in-out;
 }
 
 /* 카테고리 오픈 토글 */
-nav .category.open {
+header .category.open {
   clip-path: inset(0 0 0 0);
 }
 
 /* 메뉴 */
-nav #menu {
+header #menu {
   color: #fff;
   width: 100%;
   height: 100%;
@@ -202,7 +232,7 @@ nav #menu {
 }
 
 /* 메뉴 버튼 */
-nav #menu li {
+header #menu li {
   position: relative;
   left: 100px;
   opacity: 0;
@@ -210,7 +240,7 @@ nav #menu li {
 }
 
 /* 메뉴 버튼 호버 */
-nav #menu li.on {
+header #menu li.on {
   color: #87FF29;
   transform: translateX(-50px);
 }
@@ -220,9 +250,11 @@ nav #menu li.on {
 .main-container {
   position: relative;
   max-width: 1920px;
+  margin: 0 auto;
   height: 100vh;
   display: flex;
   align-items: center;
+  padding-bottom: 10rem;
 }
 
 /* 메인 동영상 */
@@ -238,13 +270,12 @@ nav #menu li.on {
 /* 메인 타이틀 랩(스티키로 텍스트 고정) */
 .main-container .main-title-wrap {
   width: 100%;
-  margin: 0 auto;
   position: sticky;
   top: 0;
-  padding: 0 5%;
+  transform: translateY(-20%);
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: center;
   color: #fff;
   font-size: 4vw;
   line-height: 1.4;
@@ -264,102 +295,89 @@ nav #menu li.on {
 
 .main-container .main-title-wrap p .main-title {
   position: relative;
-
-  top: 120px;
+  top: 130px;
   opacity: 0;
+  transition: 0.6s cubic-bezier(0.5, 1, 0.89, 1);
 }
 
-/* 메인 타이틀 마지막 */
-.main-container .main-title-wrap .name {
-  position: relative;
-  display: flex;
-  justify-content: flex-end;
-  font-size: 5.6vw;
-  margin-bottom: 10rem;
-  color: #6EFA00;
-  font-family: "NHaas-R";
-}
-
-/* 스크롤 다운시 메인 마지막 텍스트가 중앙으로 이동 */
-.main-container .main-title-wrap .name.active {
-  -webkit-animation: align .8s forwards ease-out;
-  animation: align .8s forwards ease-out;
-}
-
-@-webkit-keyframes align {
-  0% {
-    right: 0;
-    transform: translateX(0);
-    font-size: 5.6vw;
-    margin-bottom: 0;
-  }
-
-  100% {
-    right: 50%;
-    transform: translateX(50%);
-    font-size: 6.6vw;
-    margin-bottom: 100px;
-  }
-}
-
-@keyframes align {
-  0% {
-    right: 0;
-    transform: translateX(0);
-    font-size: 5.6vw;
-    margin-bottom: 0;
-  }
-
-  100% {
-    right: 50%;
-    transform: translateX(50%);
-    font-size: 6.6vw;
-    margin-bottom: 100px;
-  }
-}
-
-/* 스크롤 업시 메인 마지막 텍스트 원래 위치로 이동 */
-.main-container .main-title-wrap .name.back {
-  -webkit-animation: alignBack .8s forwards ease-out;
-  animation: alignBack .8s forwards ease-out;
-}
-
-@-webkit-keyframes alignBack {
-  0% {
-    right: 50%;
-    transform: translateX(50%);
-    font-size: 6.6vw;
-    margin-bottom: 100px;
-  }
-
-  100% {
-    right: 0;
-    transform: translateX(0);
-    font-size: 5.6vw;
-    margin-bottom: 0;
-  }
-}
-
-@keyframes alignBack {
-  0% {
-    right: 50%;
-    transform: translateX(50%);
-    font-size: 6.6vw;
-    margin-bottom: 100px;
-  }
-
-  100% {
-    right: 0;
-    transform: translateX(0);
-    font-size: 5.6vw;
-    margin-bottom: 0;
-  }
+.main-container .main-title-wrap p .main-title.animate {
+  top: 0;
+  opacity: 1;
 }
 
 .main-container .main-title-wrap .name .highlight {
   position: relative;
   top: 50px;
   opacity: 0;
+  transition: 0.6s cubic-bezier(0.5, 1, 0.89, 1);
+  transition-delay: .6s;
+}
+
+.main-container .main-title-wrap .name .highlight.animate {
+  top: 0;
+  opacity: 1;
+}
+
+/* 메인 타이틀 마지막 */
+.main-container .main-title-wrap .name {
+  position: absolute;
+  top: 100%;
+  font-size: 5.6vw;
+  color: #6EFA00;
+  font-family: "NHaas-M";
+  letter-spacing: 1.2;
+}
+
+/* 스크롤 다운시 메인 마지막 텍스트가 중앙으로 이동 */
+.main-container .main-title-wrap .name.active {
+  -webkit-animation: align .6s forwards ease-out;
+  animation: align .6s forwards ease-out;
+}
+
+@-webkit-keyframes align {
+  0% {
+    top: 100%;
+  }
+
+  100% {
+    top: 50%;
+  }
+}
+
+@keyframes align {
+  0% {
+    top: 100%;
+  }
+
+  100% {
+    top: 50%;
+  }
+}
+
+/* 스크롤 업시 메인 마지막 텍스트 원래 위치로 이동 */
+.main-container .main-title-wrap .name.back {
+  -webkit-animation: alignBack .6s forwards ease-out;
+  animation: alignBack .6s forwards ease-out;
+}
+
+@-webkit-keyframes alignBack {
+  0% {
+    top: 50%;
+  }
+
+  100% {
+    top: 100%;
+  }
+}
+
+@keyframes alignBack {
+  0% {
+    top: 50%;
+  }
+
+  100% {
+    top: 100%;
+  }
 }
 
 /* 스크롤 화살표 */
@@ -419,21 +437,21 @@ nav #menu li.on {
 }
 
 #about .about-wrap {
+  width: 100%;
   height: 100%;
   margin: 0 auto;
-  padding: 20rem 0;
 }
 
 #about .about-wrap .about-me {
-  position: relative;
-  top: 100px;
+  width: 100%;
   display: flex;
   justify-content: space-between;
+  transform: translateY(100px);
   opacity: 0;
 }
 
 /* 어바웃 미 스크롤시 나타나는 애니메이션 */
-#about .about-wrap .about-me.active {
+#about .about-wrap .about-me.animate {
   transform: translateY(0);
   opacity: 1;
 }
@@ -441,7 +459,7 @@ nav #menu li.on {
 /* 프로필 이미지 영역 */
 #about .about-img-area {
   position: sticky;
-  top: 20rem;
+  top: 200px;
   width: 100%;
   height: 100%;
 }
@@ -471,14 +489,18 @@ nav #menu li.on {
 
 /* 장점 */
 #about .advantages {
-  margin-top: 20rem;
+  width: 100%;
+  top: 30%;
 }
 
 #about .advantages h4 {
-  position: relative;
-  top: 10rem;
+  transform: translateY(50px);
   opacity: 0;
-  margin-bottom: 6rem;
+}
+
+#about .advantages h4.animate {
+  transform: translateY(0);
+  opacity: 1;
 }
 
 #about .advantages ul {
@@ -486,12 +508,24 @@ nav #menu li.on {
 }
 
 #about .advantages ul li {
-  position: relative;
-  top: 100px;
   width: calc(100% / 3);
   text-align: center;
   line-height: 1.5;
+  transform: translateY(100px);
   opacity: 0;
+}
+
+#about .advantages ul li.animate {
+  animation: delay .4s forwards;
+  animation-timing-function: cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+#about .advantages ul li:nth-child(2).animate {
+  animation-delay: .2s;
+}
+
+#about .advantages ul li:nth-child(3).animate {
+  animation-delay: .4s;
 }
 
 #about .advantages ul li h5 {
@@ -509,33 +543,51 @@ nav #menu li.on {
   width: 11.2rem;
 }
 
-/* ----- 스킬 영역 ----- */
-
-#skills {
-  width: 100%;
-  height: 100%;
-}
+/* ----- 스킬 ----- */
 
 #skills .skill-wrap {
+  width: 100%;
   margin: 0 auto;
-  padding: 20rem 0;
+}
+
+#skills .skill-wrap .skill-content-wrap {
+  width: 100%;
 }
 
 /* 타이틀 */
 #skills .skill-wrap h4 {
-  position: relative;
-  top: 10rem;
+  transform: translateY(100px);
   opacity: 0;
+}
+
+#skills .skill-wrap h4.animate {
+  transform: translateY(0);
+  opacity: 1;
 }
 
 /* 스킬 내용 */
 #skills .skill-wrap .skill-contents li {
-  position: relative;
-  top: 10rem;
-  opacity: 0;
   border-bottom: 0.4rem solid #111111;
   display: flex;
   justify-content: space-between;
+  transform: translateY(100px);
+  opacity: 0;
+}
+
+#skills .skill-wrap .skill-contents li.animate {
+  animation: delay 1s forwards;
+  animation-timing-function: cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes delay {
+  0% {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
 }
 
 /* 스킬 이미지 */
@@ -547,7 +599,11 @@ nav #menu li.on {
   padding: 0 20px;
 }
 
-#skills .skill-wrap .skill-contents li .skill-text-wrap {
+#skills .skill-wrap .skill-contents li:first-child {
+  padding: 0 0 5rem 2rem;
+}
+
+#skills .skill-wrap .skill-contents li {
   padding: 5rem 0 5rem 2rem;
 }
 
@@ -564,19 +620,21 @@ nav #menu li.on {
   line-height: 1.5;
 }
 
-/* ------  프로젝트 섹션 ------ */
+/* ------  프로젝트 ------ */
 
 #project {
-  width: 100%;
   height: auto;
 }
 
 #project .project-wrap {
   margin: 0 auto;
-  padding: 20rem 0;
-  position: relative;
-  top: 10rem;
+  transform: translateY(100px);
   opacity: 0;
+}
+
+#project .project-wrap.animate {
+  transform: translateY(0);
+  opacity: 1;
 }
 
 /* 프로젝트 구분 타이틀 */
@@ -598,6 +656,7 @@ nav #menu li.on {
   position: relative;
   width: 100%;
   height: 100%;
+  overflow: hidden;
 }
 
 /* 프로젝트 이미지 */
@@ -605,6 +664,12 @@ nav #menu li.on {
   width: 100%;
   display: block;
   filter: drop-shadow(0px 4px 10px rgba(0, 0, 0, 0.1));
+  transform: scale(1);
+  transition: all .4s;
+}
+
+#project .project-wrap .project-list-wrap a:hover img {
+  transform: scale(1.1);
 }
 
 /* 프로젝트 호버시 나타나는 프로젝트 정보 */
@@ -622,6 +687,7 @@ nav #menu li.on {
   justify-content: center;
   line-height: 1.8;
   opacity: 0;
+  -webkit-transition: all .4s;
   transition: all .4s;
 }
 
@@ -645,145 +711,85 @@ nav #menu li.on {
 /* ------  콘텍트 섹션 ------ */
 
 #contact {
+  position: relative;
   width: 100%;
   height: 100vh;
   transition: all .6s;
 }
 
 #contact .contact-container {
-  position: relative;
   width: 100%;
   height: 100%;
-}
-
-#contact .contact-container .contact-title {
-  transition: all 1s ease-in-out;
-  padding-left: 7.291%;
-  z-index: 0;
-  position: absolute;
-  top: 50px;
-  left: 0;
-  font-size: 5vw;
-  font-family: "NHaas-M";
-  color: #E9E9E9;
-  letter-spacing: -0.04em;
-}
-
-#contact .contact-container .contact-title.active {
-  color: #87FF29;
-  font-size: 6.2vw;
 }
 
 #contact .contact-wrap {
   width: 100%;
-  height: 100%;
-  margin: 0 auto;
+  position: absolute;
+  top: 100px;
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  gap: 20rem;
-  padding-top: 12rem;
+  flex-direction: column;
+  justify-content: center;
+  opacity: 0;
+  transition: 1s ease-in-out;
 }
 
-#contact .contact-wrap .other {
-  opacity: 0;
+#contact .contact-wrap.animate {
+  top: 0;
+  opacity: 1;
+}
+
+#contact .contact-wrap .contents {
+  opacity: 1;
   transition: all 1s ease-in-out;
   color: #fff;
   line-height: 1.5;
-}
-
-#contact .contact-wrap .other h4 {
-  font-weight: 500;
-}
-
-#contact .contact-wrap .other p {
-  color: #c4c4c4;
-}
-
-#contact .contact-wrap .other ul {
-  display: flex;
-  gap: 8rem;
-  margin-top: 30px;
-}
-
-#contact .contact-wrap .other ul li img {
-  width: 15.6rem;
-}
-
-
-/* 메일 */
-
-#contact .contact-wrap .mail {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  opacity: 0;
-  transition: all 1s ease-in-out;
-  padding: 3rem;
-  background: #111;
-  border-radius: 20px;
-}
-
-/* 메일 인풋 박스 */
-#contact .contact-wrap .mail .input-box {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  gap: 10px;
-}
-
-/* 메일 인풋 박스, 텍스트 박스 공통 */
-#contact .contact-wrap .mail input,
-#contact .contact-wrap .mail textarea {
-  box-sizing: border-box;
-  width: 100%;
-  border: none;
-  padding: 10px;
-  margin-top: 10px;
-  background: #fff;
-  border-radius: 6px;
-
-  color: #111;
-}
-
-/* 메일 텍스트 박스 */
-#contact .contact-wrap .mail textarea {
-  min-height: 150px;
-}
-
-/* 클릭시 아웃라인 비활성화 */
-#contact .mail input:focus,
-#contact .contact-wrap .mail textarea:focus {
-  outline: none;
-}
-
-/* 보내기 버튼 */
-.mail button {
-  margin-top: 50px;
-  padding: 0.5rem 1.5rem;
-  text-transform: uppercase;
-  cursor: pointer;
-  transition: all .4s;
-  background: #6EFA00;
-  border: none;
-  border-radius: 6px;
-  color: #111;
-  display: block;
   text-align: center;
-  font-weight: 600;
 }
 
-/* 버튼 호버 */
-.mail button:hover {
-  border-radius: 50px;
+#contact .contact-wrap .contents h4 {
+  font-size: 6.2rem;
+  font-weight: 600;
+  color: #6EFA00;
+}
+
+#contact .contact-wrap .contents p {
+  padding-top: 30px;
+  color: #c4c4c4;
+  
+}
+
+#contact .contact-wrap .button {
+  display: flex;
+  justify-content: center;
+  gap: 8rem;
+  padding-top: 60px;
+}
+
+#contact .contact-wrap .button li a {
+  display: block;
+  overflow: hidden;
+  width: 15.6rem;
+  border-radius: 50%;
+}
+
+#contact .contact-wrap .button li a img {
+  width: 15.6rem;
+  transform: scale(1);
+  transition: all .4s;
+}
+
+#contact .contact-wrap .button li a:hover img {
+  transform: scale(1.1);
 }
 
 /* ----- 푸터 ----- */
 
 footer {
-  height: 120px;
   position: relative;
+  width: 100%;
+  height: 120px;
   transform: translateY(-100%);
   border-top: 1px solid #c9c9c9;
   transition: all .6s;
@@ -793,7 +799,7 @@ footer .footer-wrap {
   position: relative;
   height: 100%;
   margin: 0 auto;
-  padding: 32px;
+  padding: 36px;
 }
 
 footer .footer-wrap p {

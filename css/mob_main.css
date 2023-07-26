@@ -69,19 +69,23 @@
     font-size: 56%;
   }
 
+  .title {
+    padding-bottom: 4rem;
+  }
+
   /* ----- 네비게이션 ----- */
 
-  nav .category {
+  header .category {
     width: 100%;
   }
 
-  nav #menu {
+  header #menu {
     align-items: center;
     font-size: 5.4vw;
   }
 
   /* 메뉴 버튼 호버 */
-  nav #menu li.on {
+  header #menu li.on {
     color: #87FF29;
     transform: translateX(0);
     font-size: 6.8vw;
@@ -89,64 +93,17 @@
 
   /* ----- 메인 ----- */
 
+  .main-container {
+    padding-bottom: 16rem;
+  }
+
   .main-container .main-title-wrap {
-    align-items: center;
     font-size: 5.2vw;
+    top: -5%;
   }
 
   .main-container .main-title-wrap .name {
-    justify-content: center;
     font-size: 6.8vw;
-  }
-
-  /* 스크롤 다운시 메인 마지막 텍스트가 중앙으로 이동 */
-  @-webkit-keyframes align {
-    0% {
-      font-size: 6.8vw;
-      margin-bottom: 0;
-    }
-
-    100% {
-      font-size: 8vw;
-      margin-bottom: 100px;
-    }
-  }
-
-  @keyframes align {
-    0% {
-      font-size: 6.8vw;
-      margin-bottom: 0;
-    }
-
-    100% {
-      font-size: 8vw;
-      margin-bottom: 100px;
-    }
-  }
-
-  /* 스크롤 업시 메인 마지막 텍스트 원래 위치로 이동 */
-  @-webkit-keyframes alignBack {
-    0% {
-      font-size: 8vw;
-      margin-bottom: 100px;
-    }
-
-    100% {
-      font-size: 6.8vw;
-      margin-bottom: 0;
-    }
-  }
-
-  @keyframes alignBack {
-    0% {
-      font-size: 8vw;
-      margin-bottom: 100px;
-    }
-
-    100% {
-      font-size: 6.8vw;
-      margin-bottom: 0;
-    }
   }
 
   /* ----- 프로젝트 ----- */
@@ -164,12 +121,18 @@
     filter: none;
   }
 
+  #project .project-wrap .project-list-wrap a:hover img {
+    transform: scale(1);
+  }
+
   #project .project-wrap .pub-project-hover {
     opacity: 1;
     position: static;
     height: 0;
     padding: 6.4rem 0;
-    background: rgba(17, 17, 17, .9);
+    border-top: 1px solid #ddd;
+    background: #fff;
+    color: #111;
     line-height: 1.5;
     align-items: flex-start;
     padding-left: 20px;
@@ -181,29 +144,31 @@
   }
 
   #project .project-wrap .pub-project-hover p {
-    font-weight: 300;
+    font-weight: 400;
   }
 
   /* ----- 컨텍트 ----- */
-
-  #contact {
-    height: 100%;
-    padding: 100px 0;
-  }
 
   #contact .contact-wrap {
     height: 100%;
   }
 
-  /* 컨텍트 타이틀 */
-  #contact .contact-container .contact-title {
-    font-size: 7vw;
-    padding-left: 5%;
-    top: -50px;
+  #contact .contact-wrap .contents h4 {
+    font-size: 4.2rem;
+    line-height: 1.2;
   }
 
-  #contact .contact-container .contact-title.active {
-    font-size: 8.2vw;
+  #contact .contact-wrap .button {
+    padding-top: 0;
+    gap: 4rem;
+  }
+
+  #contact .contact-wrap .button li img {
+    width: 12.6rem;
+  }
+
+  #contact .contact-wrap .button li a:hover img {
+    transform: scale(1);
   }
 }
 
@@ -223,11 +188,17 @@
   }
 
   .m-interval {
-    padding: 0 20px;
+    padding: 0 10px;
   }
 
-  .sub-txt {
-    font-size: 1.8rem;
+  /* ----- 메인 ----- */
+
+  .main-container {
+    padding-bottom: 8rem;
+  }
+
+  .main-container .main-title-wrap {
+    top: 0;
   }
 
   /* ----- 어바웃 ----- */
@@ -292,6 +263,16 @@
     max-width: 590px;
   }
 
+  .bottom {
+    padding-bottom: 150px;
+  }
+
+  /* 타이틀 스크롤 텍스트 애니메이션 공통 */
+  .skill-title-container,
+  .pro-title-container {
+    margin-bottom: 150px;
+  }
+
   /* ----- 어바웃 ----- */
 
   #about .about-wrap .about-me {
@@ -330,6 +311,16 @@
 
   /* ----- 어바웃 ----- */
 
+  #about .about-wrap .about-me {
+    position: static;
+    opacity: 1;
+  }
+
+  #about .advantages h4 {
+    position: static;
+    opacity: 1;
+  }
+
   #about .advantages ul {
     flex-direction: column;
     gap: 50px;
@@ -337,6 +328,8 @@
 
   #about .advantages ul li {
     width: 100%;
+    position: static;
+    opacity: 1;
   }
 
   /* ----- 스킬 ----- */
@@ -347,13 +340,12 @@
   }
 
   #skills .skill-wrap .skill-contents li .skill-text-wrap {
-    padding: 5rem 1rem 3rem 1rem;
+    padding: 0 1rem 3rem 1rem;
   }
 
   #skills .skill-wrap .skill-contents li img {
     left: 50%;
     transform: translateX(-50%);
-    margin-bottom: 5rem;
   }
 
   /* ----- 프로젝트 ----- */
@@ -365,16 +357,17 @@
   }
 
   #project .project-wrap .project-list-wrap {
-    gap: 1.2rem;
+    gap: 3rem;
+    flex-direction: column;
   }
 
   /* ----- 컨텍트 ----- */
 
-  #contact .contact-wrap .other ul {
+  #contact .contact-wrap .button ul {
     gap: 3rem;
   }
 
-  #contact .contact-wrap .other ul li img {
+  #contact .contact-wrap .button li img {
     width: 12.6rem;
   }
 

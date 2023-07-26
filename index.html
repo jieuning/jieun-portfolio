@@ -22,29 +22,21 @@
     integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous">
     </script>
   <script src="https://cdn.jsdelivr.net/npm/jquery.easing@1.4.1/jquery.easing.min.js"></script>
-  <!-- emailjs -->
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-  <script type="text/javascript">
-    (function () {
-      // 공개키
-      emailjs.init("safhfbobRTqExyi99");
-    })();
-  </script>
   <!-- script -->
   <script src="js/scrollAni.js"></script>
   <script src="js/category.js"></script>
   <script src="js/menuScroll.js"></script>
   <script src="js/scrollToTop.js"></script>
-  <script src="js/email.js"></script>
 </head>
 
 <body>
 
   <!----- 탑 네비게이션 ----->
 
-  <nav>
+  <header>
+    <h2 class="hidden">로고, 메뉴</h2>
+
     <!-- 로고 -->
-    <h2 class="hidden">로고</h2>
     <img class="logo" src="image/logo2.png" alt="포트폴리오 로고">
 
     <!-- 카테고리 버튼 -->
@@ -64,18 +56,18 @@
         <li>contact us</li>
       </ul>
     </div>
-  </nav>
+  </header>
 
   <div id="all-wrap">
 
     <!----- 메인 ----->
 
-    <section id="main">
+    <section id="main" class="bottom">
       <h2 class="hidden">메인 페이지</h2>
       <div class="main-container">
 
         <!-- 메인 동영상 -->
-        <video autoplay loop muted>
+        <video autoplay loop muted playsinline>
           <source src="image/run_video.mp4" type="video/mp4">
         </video>
 
@@ -105,7 +97,7 @@
     <section id="about" class="m-interval">
       <h2 class="hidden">어바웃 페이지</h2>
       <article class="about-wrap width-set">
-        <div class="about-me">
+        <div class="about-me bottom quart">
 
           <!-- 프로필 이미지 영역 -->
           <div class="about-img-area">
@@ -146,27 +138,29 @@
         <!-- 장점 -->
         <div class="advantages">
 
-          <!-- 타이틀 -->
-          <h4 class="title m-center">저는 이런 장점을 가지고 있습니다!</h4>
+          <div class="advantages-wrap bottom">
+            <!-- 타이틀 -->
+            <h4 class="title m-center quart">저는 이런 장점을 가지고 있습니다!</h4>
 
-          <!-- 이미지, 설명 -->
-          <ul>
-            <li>
-              <img src="image/advantages1.svg" alt="반짝 빛나는 스마일 아이콘">
-              <h5>긍정적 사고</h5>
-              <p class="sub-txt">목표를 향해<br> 달려갈 수 있게 해주는 힘</p>
-            </li>
-            <li>
-              <img src="image/advantages2.svg" alt="하트를 안고 있는 아이콘">
-              <h5>넓은 포용력</h5>
-              <p class="sub-txt">다름을 인정하고<br> 맞춰갈 수 있는 사람</p>
-            </li>
-            <li>
-              <img src="image/advantages3.svg" alt="손을 들고 있는 아이콘">
-              <h5>책임감</h5>
-              <p class="sub-txt">도전과 주어진 일에 끝까지<br> 책임을 질 수 있는 사람</p>
-            </li>
-          </ul>
+            <!-- 이미지, 설명 -->
+            <ul>
+              <li>
+                <img src="image/advantages1.svg" alt="반짝 빛나는 스마일 아이콘">
+                <h5>긍정적 사고</h5>
+                <p class="sub-txt">목표를 향해<br> 달려갈 수 있게 해주는 힘</p>
+              </li>
+              <li>
+                <img src="image/advantages2.svg" alt="하트를 안고 있는 아이콘">
+                <h5>넓은 포용력</h5>
+                <p class="sub-txt">다름을 인정하고<br> 맞춰갈 수 있는 사람</p>
+              </li>
+              <li>
+                <img src="image/advantages3.svg" alt="손을 들고 있는 아이콘">
+                <h5>책임감</h5>
+                <p class="sub-txt">도전과 주어진 일에 끝까지<br> 책임을 질 수 있는 사람</p>
+              </li>
+            </ul>
+          </div>
         </div>
       </article>
     </section>
@@ -177,81 +171,84 @@
       <div class="skill-title-container">
 
         <!-- 스킬 영역 타이틀 스크롤 애니메이션 -->
-        <ul class="skill-title-box">
-          <li class="skill-title-wrap">
-            <span>skill</span>
-          </li>
-        </ul>
+        <div class="skill-title-box">
+          <sapn class="skill-title-wrap">
+            skill
+            <i>마름모 빛나는 아이콘</i>
+          </sapn>
+        </div>
       </div>
       <div class="skill-wrap width-set m-interval">
+        <div class="skill-content-wrap bottom">
+          <h4 class="title m-center quart">저는 이런 일을 할 수 있습니다!</h4>
 
-        <h4 class="title m-center">저는 이런 일을 할 수 있습니다!</h4>
+          <!-- 스킬 내용 -->
+          <ul class="skill-contents m-center">
 
-        <!-- 스킬 내용 -->
-        <ul class="skill-contents m-center">
+            <!-- 스킬 1 -->
+            <li>
+              <div class="skill-text-wrap sub-txt">
+                <h5>html & css</h5>
+                <p>웹 표준, 웹 접근성을 준수하여 웹 페이지 제작 </p>
+                <p>시멘틱 마크업을 통한 의미있는 구조 설계</p>
+                <p>미디어 쿼리를 이용한 반응형 웹사이트 구축</p>
+              </div>
+              <img src="image/skill1.svg" alt="html5, css3 아이콘">
+            </li>
 
-          <!-- 스킬 1 -->
-          <li>
-            <div class="skill-text-wrap sub-txt">
-              <h5>html & css</h5>
-              <p>웹 표준, 웹 접근성을 준수하여 웹 페이지 제작 </p>
-              <p>시멘틱 마크업을 통한 의미있는 구조 설계</p>
-              <p>미디어 쿼리를 이용한 반응형 웹사이트 구축</p>
-            </div>
-            <img src="image/skill1.svg" alt="html5, css3 아이콘">
-          </li>
+            <!-- 스킬 2 -->
+            <li>
+              <div class="skill-text-wrap sub-txt">
+                <h5>Javascript</h5>
+                <p>ES6문법 활용</p>
+                <p>Jquery 라이브러리를 이용한 애니메이션 기능 구현</p>
+                <p>장바구니, 로그인, 회원가입, 탭등 웹에서 자주 사용되는 다양한 기능 구현</p>
+              </div>
+              <img src="image/skill2.svg" alt="자바스크립트 아이콘">
+            </li>
 
-          <!-- 스킬 2 -->
-          <li>
-            <div class="skill-text-wrap sub-txt">
-              <h5>Javascript</h5>
-              <p>ES6문법 활용</p>
-              <p>Jquery 라이브러리를 이용한 애니메이션 기능 구현</p>
-              <p>장바구니, 로그인, 회원가입, 탭등 웹에서 자주 사용되는 다양한 기능 구현</p>
-            </div>
-            <img src="image/skill2.svg" alt="자바스크립트 아이콘">
-          </li>
+            <!-- 스킬 3 -->
+            <li>
+              <div class="skill-text-wrap sub-txt">
+                <h5>React</h5>
+                <p>JSX문법을 사용하여 HTML과 자바스크립트 동시 작성</p>
+                <p>Component, Props, Router 등 React에 대한 이해</p>
+                <p>React Hook을 활용한 기능 구현</p>
+                <p>Styled-component를 이용한 CSS 작성</p>
+              </div>
+              <img src="image/skill3.svg" alt="리액트 아이콘">
+            </li>
 
-          <!-- 스킬 3 -->
-          <li>
-            <div class="skill-text-wrap sub-txt">
-              <h5>React</h5>
-              <p>JSX문법을 사용하여 HTML과 자바스크립트 동시 작성</p>
-              <p>Component, Props, Router 등 React에 대한 이해</p>
-              <p>React Hook을 활용한 기능 구현</p>
-              <p>Styled-component를 이용한 CSS 작성</p>
-            </div>
-            <img src="image/skill3.svg" alt="리액트 아이콘">
-          </li>
-
-          <!-- 스킬 4 -->
-          <li>
-            <div class="skill-text-wrap sub-txt">
-              <h5>Others</h5>
-              <p>UIUX에 대한 이해</p>
-              <p>Potoshop, Illustrator, Figma 툴 이용하여 웹 사이트 시안 제작</p>
-              <p>Github 관리</p>
-            </div>
-            <img src="image/skill4.svg" alt="피그마, 포토샵, 일러스트레이터 아이콘">
-          </li>
-        </ul>
+            <!-- 스킬 4 -->
+            <li>
+              <div class="skill-text-wrap sub-txt">
+                <h5>Others</h5>
+                <p>UIUX에 대한 이해</p>
+                <p>Potoshop, Illustrator, Figma 툴 이용하여 웹 사이트 시안 제작</p>
+                <p>Github 관리</p>
+              </div>
+              <img src="image/skill4.svg" alt="피그마, 포토샵, 일러스트레이터 아이콘">
+            </li>
+          </ul>
+        </div>
       </div>
     </section>
 
     <!----- 프로젝트 ------>
 
-    <section id="project">
+    <section id="project" class="bottom">
       <div class="pro-title-container">
 
         <!-- 프로젝트 영역 타이틀 스크롤 애니메이션 -->
-        <ul class="project-title-box">
-          <li class="project-title-wrap">
-            <span>project</span>
-          </li>
-        </ul>
+        <div class="project-title-box">
+          <sapn class="project-title-wrap">
+            project
+            <i>마름모 빛나는 아이콘</i>
+          </sapn>
+        </div>
       </div>
 
-      <div class="project-wrap width-set m-interval">
+      <div class="project-wrap width-set m-interval quart">
 
         <!-- 퍼블리싱 프로젝트 -->
         <h4 class="title m-center">Publishing</h4>
@@ -330,53 +327,35 @@
     <!----- 콘텍트  ----->
 
     <section id="contact">
-      <h2 class="hidden">콘텍트 페이지</h2>
-      <div class="contact-container m-interval">
+      <div class="contact-container">
+        <h2 class="hidden">콘텍트 페이지</h2>
 
-        <!-- 섹션 타이틀 -->
-        <h4 class="contact-title m-center">contact us</h4>
-
-        <div class="contact-wrap width-set m-center">
-          <div class="other">
+        <div class="contact-wrap width-set m-center m-interval">
+          <div class="contents">
 
             <!-- 타이틀 -->
-            <h4 class="title">끝까지 봐주셔서<br> 감사합니다 :&#41;</h4>
+            <h4>끝까지 봐주셔서 감사합니다 :&#41;</h4>
 
             <!-- 내용 -->
             <p class="sub-txt">
-              메일을 보내시거나 카카오톡 QR코드를 통해 오픈 채팅에 참여하실 수 있습니다.
+              QR코드를 스캔 또는 클릭하시면 카카오톡 오픈 채팅 페이지로,<br>
               고양이 모양의 아이콘을 클릭하시면 깃허브 페이지로 이동합니다.
             </p>
+          </div>
 
-            <!-- 카카오 qr, 깃허브 바로가기 버튼 -->
-            <ul>
-              <li>
+          <!-- 카카오 qr 버튼, 깃허브 바로가기 버튼 -->
+          <ul class="button">
+            <li>
+              <a href="#">
                 <img src="image/kakao_qr.png" alt="카카오톡 오픈 채팅 qr코드">
-              </li>
-              <li>
-                <a href="https://github.com/jieuning">
-                  <img src="image/github.png" alt="고양이 모양 깃허브 아이콘">
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          <!-- emailjs -->
-          <div class="mail">
-            <h2 class="hidden">메일 보내기</h2>
-            <div class="input-box">
-              <h2 class="hidden">이름 입력칸</h2>
-              <input type="text" id="name" placeholder="이름" required>
-              <h2 class="hidden">이메일 입력칸</h2>
-              <input type="email" id="email" placeholder="이메일" required>
-            </div>
-            <h2 class="hidden">제목 입력칸</h2>
-            <input type="text" id="subject" placeholder="제목" required>
-            <h2 class="hidden">내용 입력 텍스트 박스</h2>
-            <textarea id="message" placeholder="보내실 내용을 입력해주세요." required></textarea>
-            <h2 class="hidden">보내기 버튼</h2>
-            <button onclick="sendEmail()">보내기</button>
-          </div>
+              </a>
+            </li>
+            <li>
+              <a href="https://github.com/jieuning">
+                <img src="image/github.png" alt="고양이 모양 깃허브 아이콘">
+              </a>
+            </li>
+          </ul>
         </div>
       </div>
     </section>
@@ -388,7 +367,7 @@
     <div class="footer-wrap width-set">
       <p>
         상업적 목적이 아닌 개인 포트폴리오 목적으로 만들어진 사이트입니다.<br>
-        © 2023 Jieun All rights reserved.
+        © 2023 JE All rights reserved.
       </p>
 
       <!-- 탑 버튼 -->
