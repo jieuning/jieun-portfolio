@@ -30,7 +30,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 #all-wrap {
-  min-height: calc(100% - 120px);
+  min-height: calc(100%);
 }
 
 section {
@@ -89,9 +89,21 @@ section {
   top: 50%;
   width: 100%;
   height: 100%;
+  display: -webkit-box;
   display: flex;
   gap: 30px;
+  -webkit-animation: textAni 35s linear infinite;
   animation: textAni 35s linear infinite;
+}
+
+@-webkit-keyframes textAni {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-100%)
+  }
 }
 
 @keyframes textAni {
@@ -109,7 +121,9 @@ section {
   font-size: 4.8rem;
   text-transform: uppercase;
   font-family: "NHaas-B";
+  display: -webkit-box;
   display: flex;
+  -webkit-box-align: center;
   align-items: center;
   gap: 30px;
 }
@@ -222,8 +236,11 @@ header #menu {
   color: #fff;
   width: 100%;
   height: 100%;
+  display: -webkit-box;
   display: flex;
+  -webkit-box-orient: vertical;
   flex-direction: column;
+  -webkit-box-pack: center;
   justify-content: center;
   text-transform: uppercase;
   font-family: "NHaas-B";
@@ -252,7 +269,9 @@ header #menu li.on {
   max-width: 1920px;
   margin: 0 auto;
   height: 100vh;
+  display: -webkit-box;
   display: flex;
+  -webkit-box-align: center;
   align-items: center;
   padding-bottom: 10rem;
 }
@@ -273,8 +292,11 @@ header #menu li.on {
   position: sticky;
   top: 0;
   transform: translateY(-20%);
+  display: -webkit-box;
   display: flex;
+  -webkit-box-orient: vertical;
   flex-direction: column;
+  -webkit-box-align: center;
   align-items: center;
   color: #fff;
   font-size: 4vw;
@@ -297,6 +319,7 @@ header #menu li.on {
   position: relative;
   top: 130px;
   opacity: 0;
+  -webkit-transition: 0.6s cubic-bezier(0.5, 1, 0.89, 1);
   transition: 0.6s cubic-bezier(0.5, 1, 0.89, 1);
 }
 
@@ -309,7 +332,9 @@ header #menu li.on {
   position: relative;
   top: 50px;
   opacity: 0;
+  -webkit-transition: 0.6s cubic-bezier(0.5, 1, 0.89, 1);
   transition: 0.6s cubic-bezier(0.5, 1, 0.89, 1);
+  -webkit-transition-delay: .6s;
   transition-delay: .6s;
 }
 
@@ -444,7 +469,9 @@ header #menu li.on {
 
 #about .about-wrap .about-me {
   width: 100%;
+  display: -webkit-box;
   display: flex;
+  -webkit-box-pack: justify;
   justify-content: space-between;
   transform: translateY(100px);
   opacity: 0;
@@ -504,6 +531,7 @@ header #menu li.on {
 }
 
 #about .advantages ul {
+  display: -webkit-box;
   display: flex;
 }
 
@@ -516,15 +544,19 @@ header #menu li.on {
 }
 
 #about .advantages ul li.animate {
+  -webkit-animation: delay .4s forwards;
   animation: delay .4s forwards;
+  -webkit-animation-timing-function: cubic-bezier(0.34, 1.56, 0.64, 1);
   animation-timing-function: cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 #about .advantages ul li:nth-child(2).animate {
+  -webkit-animation-delay: .2s;
   animation-delay: .2s;
 }
 
 #about .advantages ul li:nth-child(3).animate {
+  -webkit-animation-delay: .4s;
   animation-delay: .4s;
 }
 
@@ -568,15 +600,30 @@ header #menu li.on {
 /* 스킬 내용 */
 #skills .skill-wrap .skill-contents li {
   border-bottom: 0.4rem solid #111111;
+  display: -webkit-box;
   display: flex;
+  -webkit-box-pack: justify;
   justify-content: space-between;
   transform: translateY(100px);
   opacity: 0;
 }
 
 #skills .skill-wrap .skill-contents li.animate {
+  -webkit-animation: delay 1s forwards;
   animation: delay 1s forwards;
+  -webkit-animation-timing-function: cubic-bezier(0.34, 1.56, 0.64, 1);
   animation-timing-function: cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@-webkit-keyframes delay {
+  0% {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
 }
 
 @keyframes delay {
@@ -647,24 +694,28 @@ header #menu li.on {
 }
 
 #project .project-wrap .project-list-wrap {
+  display: -webkit-box;
   display: flex;
   gap: 6rem;
 }
 
 #project .project-wrap .project-list-wrap a {
+  display: -webkit-box;
   display: block;
   position: relative;
   width: 100%;
   height: 100%;
   overflow: hidden;
+  -webkit-filter: drop-shadow(0px 4px 10px rgba(0, 0, 0, 0.1));
+  filter: drop-shadow(0px 4px 10px rgba(0, 0, 0, 0.1));
 }
 
 /* 프로젝트 이미지 */
 #project .project-wrap .project-list-wrap .Pub-project-img img {
   width: 100%;
   display: block;
-  filter: drop-shadow(0px 4px 10px rgba(0, 0, 0, 0.1));
   transform: scale(1);
+  -webkit-transition: all .4s;
   transition: all .4s;
 }
 
@@ -681,9 +732,13 @@ header #menu li.on {
   height: 100%;
   background: rgba(17, 17, 17, 0.80);
   color: #fff;
-  text-align: center;
+  display: -webkit-box;
   display: flex;
+  -webkit-box-align: start;
+  text-align: center;
+  -webkit-box-orient: vertical;
   flex-direction: column;
+  -webkit-box-pack: center;
   justify-content: center;
   line-height: 1.8;
   opacity: 0;
@@ -714,6 +769,7 @@ header #menu li.on {
   position: relative;
   width: 100%;
   height: 100vh;
+  -webkit-transition: all .6s;
   transition: all .6s;
 }
 
@@ -728,10 +784,14 @@ header #menu li.on {
   top: 100px;
   left: 50%;
   transform: translateX(-50%);
+  display: -webkit-box;
   display: flex;
+  -webkit-box-orient: vertical;
   flex-direction: column;
+  -webkit-box-pack: center;
   justify-content: center;
   opacity: 0;
+  -webkit-transition: 1s ease-in-out;
   transition: 1s ease-in-out;
 }
 
@@ -742,6 +802,7 @@ header #menu li.on {
 
 #contact .contact-wrap .contents {
   opacity: 1;
+  -webkit-transition: all 1s ease-in-out;
   transition: all 1s ease-in-out;
   color: #fff;
   line-height: 1.5;
@@ -761,7 +822,9 @@ header #menu li.on {
 }
 
 #contact .contact-wrap .button {
+  display: -webkit-box;
   display: flex;
+  -webkit-box-pack: center;
   justify-content: center;
   gap: 8rem;
   padding-top: 60px;
@@ -777,6 +840,7 @@ header #menu li.on {
 #contact .contact-wrap .button li a img {
   width: 15.6rem;
   transform: scale(1);
+  -webkit-transition: all .4s;
   transition: all .4s;
 }
 
@@ -787,11 +851,12 @@ header #menu li.on {
 /* ----- 푸터 ----- */
 
 footer {
-  position: relative;
+  position: absolute;
   width: 100%;
   height: 120px;
   transform: translateY(-100%);
   border-top: 1px solid #c9c9c9;
+  -webkit-transition: all .6s;
   transition: all .6s;
 }
 
