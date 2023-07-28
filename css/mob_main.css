@@ -81,6 +81,7 @@
   }
 
   header #menu {
+    -webkit-box-align: center;
     align-items: center;
     font-size: 5.4vw;
   }
@@ -127,6 +128,7 @@
     background: #fff;
     color: #111;
     line-height: 1.5;
+    -webkit-box-align: start;
     align-items: flex-start;
     padding-left: 20px;
   }
@@ -211,11 +213,13 @@
   /* ----- 컨텍트 ----- */
 
   #contact .contact-wrap {
+    -webkit-box-orient: vertical;
     flex-direction: column;
     max-width: 500px;
   }
 
   #contact .contact-wrap .other ul {
+    -webkit-box-pack: center;
     justify-content: center;
   }
 
@@ -234,6 +238,7 @@
   footer .footer-wrap {
     display: -webkit-box;
     display: flex;
+    -webkit-box-orient: vertical;
     flex-direction: column-reverse;
     padding: 22px;
   }
@@ -243,6 +248,7 @@
     top: 0;
     padding-bottom: 18px;
     transform: translateY(0);
+    -webkit-box-align: center;
     text-align: center;
   }
 }
@@ -272,6 +278,7 @@
   #about .about-wrap .about-me {
     display: -webkit-box;
     display: flex;
+    -webkit-box-orient: vertical;
     flex-direction: column-reverse;
     gap: 50px;
   }
@@ -301,6 +308,7 @@
   /* ----- 공용 클래스 ----- */
 
   .m-center {
+    -webkit-box-align: center;
     text-align: center;
   }
 
@@ -311,7 +319,9 @@
   /* ----- 어바웃 ----- */
 
   #about .advantages ul {
+    -webkit-box-orient: vertical;
     flex-direction: column;
+    -webkit-box-align: center;
     align-items: center;
     gap: 50px;
   }
@@ -319,7 +329,9 @@
   /* ----- 스킬 ----- */
 
   #skills .skill-wrap .skill-contents li {
+    -webkit-box-orient: vertical;
     flex-direction: column;
+    -webkit-box-pack: center;
     justify-content: center;
   }
 
@@ -335,6 +347,7 @@
   /* ----- 프로젝트 ----- */
 
   #project .project-wrap .pub-project-hover {
+    -webkit-box-align: center;
     align-items: center;
     padding-left: 0;
     padding: 5.6rem 0;
@@ -342,6 +355,7 @@
 
   #project .project-wrap .project-list-wrap {
     gap: 3rem;
+    -webkit-box-orient: vertical;
     flex-direction: column;
   }
 
@@ -366,6 +380,7 @@
   /* ----- 프로젝트 ----- */
 
   #project .project-wrap .project-list-wrap {
+    -webkit-box-orient: vertical;
     flex-direction: column;
   }
 
