@@ -92,8 +92,8 @@ section {
   display: -webkit-box;
   display: flex;
   gap: 30px;
-  -webkit-animation: textAni 35s linear infinite;
-  animation: textAni 35s linear infinite;
+  -webkit-animation: textAni 25s linear infinite;
+  animation: textAni 25s linear infinite;
 }
 
 @-webkit-keyframes textAni {
@@ -768,7 +768,7 @@ header #menu li.on {
 #contact {
   position: relative;
   width: 100%;
-  height: 100vh;
+  height: 100%;
   -webkit-transition: all .6s;
   transition: all .6s;
 }
@@ -780,7 +780,7 @@ header #menu li.on {
 
 #contact .contact-wrap {
   width: 100%;
-  position: absolute;
+  position: relative;
   top: 100px;
   left: 50%;
   transform: translateX(-50%);
@@ -851,10 +851,11 @@ header #menu li.on {
 /* ----- 푸터 ----- */
 
 footer {
-  position: absolute;
+  position: relative;
+  bottom: 0;
   width: 100%;
   height: 120px;
-  transform: translateY(-100%);
+  /* transform: translateY(-100%); */
   border-top: 1px solid #c9c9c9;
   -webkit-transition: all .6s;
   transition: all .6s;

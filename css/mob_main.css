@@ -280,7 +280,10 @@
     display: flex;
     -webkit-box-orient: vertical;
     flex-direction: column-reverse;
-    gap: 50px;
+  }
+
+  #about .about-content-area {
+    padding-bottom: 5rem;
   }
 
   #about .about-img-area {
@@ -290,6 +293,10 @@
   #about .about-img-area img {
     width: 100%;
     padding-right: 0;
+  }
+
+  #about .advantages ul li {
+    width: 50%;
   }
 
   /* ----- 프로젝트 ----- */

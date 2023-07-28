@@ -22,6 +22,7 @@ $(document).ready(function () {
 
     // 실시간 스크롤 탑값
     let Scroll = $(window).scrollTop();
+    console.log(Scroll)
 
     // ---------- 메인 텍스트 애니메이션 ----------
 
@@ -110,13 +111,12 @@ $(document).ready(function () {
 
     let contactOffset = $("#contact").offset().top;
 
-    if (Scroll >= contactOffset - 10) {
+    if (Scroll > contactOffset - 120) {
       $(".contact-title").addClass("animate");
       $(".contact-wrap").addClass("animate");
       $("#contact").css({ "background": "#151515" });
       $("footer").css({ "background": "#151515", "opacity": 1 });
-    }
-
+    } 
     else if (Scroll < contactOffset) {
       $(".contact-title").removeClass("animate");
       $(".contact-wrap").removeClass("animate");
